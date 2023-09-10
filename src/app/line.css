@@ -1,0 +1,41 @@
+.line-detail {
+  --line-light-color: 225 29 72;
+  --line-dark-color: 2 132 199;
+  --line-width: 3px;
+  --offset-left: calc(-1 * 6.5rem);
+
+  --line-color: var(--line-light-color);
+
+  --line-gradient: linear-gradient(
+    90deg,
+    rgb(var(--line-color) / 0) 0%,
+    rgb(var(--line-color) / 1) 20%,
+    rgb(var(--line-color) / 1) 80%,
+    rgb(var(--line-color) / 0) 100%
+  );
+}
+
+.line-detail:not(.hide-line) {
+  position: relative;
+}
+
+.dark .line-detail {
+  --line-color: var(--line-dark-color);
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  left: var(--offset-left);
+  width: var(--line-width);
+  height: 100%;
+  background: rgb(var(--line-color));
+  background: var(--line-gradient);
+  z-index: -1;
+}
+
+@media (min-width: 1024px) {
+  .line-detail:not(.hide-line)::before {
+    content: "";
+  }
+}

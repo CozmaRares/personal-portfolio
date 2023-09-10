@@ -15,7 +15,6 @@ const ThemeContextProvider: React.FC<{ children: React.ReactNode }> = ({
   const [theme, setTheme] = useState<Theme>("light");
 
   const toggleTheme = () => {
-    console.log("mata");
     if (theme === "light") {
       setTheme("dark");
       window.localStorage.setItem("theme", "dark");
@@ -29,7 +28,6 @@ const ThemeContextProvider: React.FC<{ children: React.ReactNode }> = ({
 
   useEffect(() => {
     const localTheme = window.localStorage.getItem("theme") as Theme | null;
-    console.log(localTheme);
 
     if (localTheme) {
       setTheme(localTheme);
