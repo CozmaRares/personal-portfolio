@@ -5,4 +5,4 @@ export const links = Object.freeze([
   "skills",
   "experience",
   "contact",
-]);
+] as const);
