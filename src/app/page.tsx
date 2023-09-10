@@ -8,6 +8,8 @@ import { motion } from "framer-motion";
 const Home = () => {
   return (
     <>
+      <div className="2 absolute -top-1 right-0 -z-10 h-[30rem] w-[30rem] rounded-full bg-fuchsia-200 blur-[100px] dark:bg-cyan-300/30 sm:right-[5rem] sm:w-[65rem]" />
+      <div className="absolute -left-[35rem] -top-4 -z-10 h-[30rem] w-[50rem] rounded-full bg-pink-200/80 blur-[100px] dark:bg-indigo-400/40 sm:w-[65rem] md:-left-[35rem] lg:-left-[30rem]" />
       <motion.header
         className="fixed left-1/2 top-0 w-full min-w-[15rem] bg-white/50 p-4 capitalize backdrop-blur neon-amber-sm dark:bg-gray-950/70 dark:neon-sky-sm  sm:top-5 sm:w-[30rem] sm:rounded-full"
         initial={{ x: "-50%", y: -100, opacity: 0 }}
@@ -65,9 +67,8 @@ const Intro = () => (
         👋
       </motion.span>
     </div>
-
     <motion.h1
-      className="text-2xl font-medium !leading-[1.5] sm:text-4xl"
+      className="text-2xl font-medium !leading-[1.5] md:text-3xl"
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
     >
@@ -75,8 +76,8 @@ const Intro = () => (
       <span className="font-bold">a web developer</span> who loves creating{" "}
       <span className="italic">sites & apps</span>. While I mainly work with{" "}
       <span className="underline">React</span>, I also enjoy tinkering with
-      various web technologies, and get my hands dirty with stuff like{" "}
-      <span className="underline">C/C++</span> and
+      various <span className="underline">web technologies</span>, and get my
+      hands dirty with stuff like <span className="underline">C/C++</span> and
       <span className="underline">Java</span>. 😊
     </motion.h1>
   </section>
