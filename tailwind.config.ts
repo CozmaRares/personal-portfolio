@@ -15,6 +15,14 @@ const config: Config = {
   plugins: [
     plugin(({ theme, addUtilities }) => {
       const neon: CSSRuleObject = {};
+      const sizes: {
+        name?: string;
+        dimensions: { inner: number; outer: number };
+      }[] = [
+        { name: "sm", dimensions: { inner: 2, outer: 10 } },
+        { dimensions: { inner: 5, outer: 20 } },
+        { name: "lg", dimensions: { inner: 8, outer: 30 } },
+      ];
       const colors = theme("colors");
 
       for (const color in colors) {
@@ -22,9 +30,10 @@ const config: Config = {
           const color1 = colors[color]["500"];
           const color2 = colors[color]["700"];
 
-          neon[`.neon-${color}`] = {
-            boxShadow: `0 0 5px ${color1}, 0 0 20px ${color2}`,
-          };
+          for (const size of sizes)
+            neon[`.neon-${color}${size.name ? "-" + size.name : ""}`] = {
+              boxShadow: `0 0 ${size.dimensions.inner}px ${color1}, 0 0 ${size.dimensions.outer}px ${color2}`,
+            };
         }
       }
 
