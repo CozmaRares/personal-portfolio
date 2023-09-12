@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import ThemeSwitch from "@/components/ThemeSwitch";
+import Header from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         className={`${inter.className} bg-gray-100 px-4 text-gray-950 dark:bg-gray-900 dark:text-gray-50`}
       >
         <ThemeContextProvider>
+          <Header />
           {children}
           <ThemeSwitch />
         </ThemeContextProvider>

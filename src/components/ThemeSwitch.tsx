@@ -12,7 +12,7 @@ const ThemeSwitch = () => {
       <motion.button
         key={theme}
         onClick={toggleTheme}
-        className="fixed bottom-5 right-5 scale-125 rounded-full bg-gray-200 p-1.5 neon-amber dark:bg-gray-950 dark:neon-sky"
+        className="fixed bottom-5 right-5 scale-125 rounded-full bg-gray-100 p-1.5 neon-indigo dark:bg-gray-950 dark:neon-green"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}

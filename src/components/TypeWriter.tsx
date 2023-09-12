@@ -1,7 +1,6 @@
 import useTypeWriter from "@/hooks/useTypeWriter";
 import { cn } from "@/lib/utils";
 
-//TODO: stop typewriter when out of screen
 const TypeWriter: React.FC<{
   typeWriter: Parameters<typeof useTypeWriter>;
   className?: string;
@@ -15,7 +14,7 @@ const TypeWriter: React.FC<{
       <span
         aria-hidden
         className={cn(
-          "animate-blink inline-block",
+          "inline-block animate-blink",
           { hidden: !typeWriter?.isRunning() },
           blinkerClassName,
         )}

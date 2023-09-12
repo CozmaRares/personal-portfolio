@@ -6,12 +6,13 @@ export default function useTypeWriter(
   actions: Action[],
   settings: {
     loop?: boolean;
+    delay?: number;
     typingSpeed?: number;
     deletingSpeed?: number;
   } = {},
 ) {
   const [string, setString] = useState("");
-  const [typeWriterInstance, setTwInst] = useState<TypeWriter>();
+  const [instance, setInstance] = useState<TypeWriter>();
 
   useDeepCompareEffect(() => {
     const typeWriter = new TypeWriter(
@@ -19,7 +20,7 @@ export default function useTypeWriter(
       text => setString(text),
       settings,
     );
-    setTwInst(typeWriter);
+    setInstance(typeWriter);
     typeWriter.start();
 
     return () => {
@@ -27,5 +28,5 @@ export default function useTypeWriter(
     };
   }, [settings, actions]);
 
-  return { text: string, typeWriter: typeWriterInstance };
+  return { text: string, typeWriter: instance };
 }

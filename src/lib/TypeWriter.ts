@@ -15,21 +15,30 @@ export type Action =
       type: "clear";
     };
 
+async function sleep(duration: number) {
+  return new Promise<void>(resolve => {
+    setTimeout(resolve, duration);
+  });
+}
+
 export default class TypeWriter {
   private queue: Array<() => Promise<void>>;
   private loop: boolean;
+  private delay: number;
   private typingSpeed: number;
   private deletingSpeed: number;
 
   private text = "";
+  private stopped = false;
   private running = false;
 
   constructor(
     actions: Action[],
     setTextCallback: (text: string) => void,
-    { loop = false, typingSpeed = 50, deletingSpeed = 50 } = {},
+    { loop = false, delay = 0, typingSpeed = 50, deletingSpeed = 50 } = {},
   ) {
     this.loop = loop;
+    this.delay = delay;
     this.typingSpeed = typingSpeed;
     this.deletingSpeed = deletingSpeed;
 
@@ -42,7 +51,7 @@ export default class TypeWriter {
             new Promise((resolve, reject) => {
               let i = 0;
               const interval = setInterval(() => {
-                if (!this.running) {
+                if (this.stopped) {
                   clearInterval(interval);
                   reject();
                 }
@@ -57,16 +66,13 @@ export default class TypeWriter {
               }, this.typingSpeed);
             });
         case "pause":
-          return () =>
-            new Promise(resolve => {
-              setTimeout(resolve, action.duration);
-            });
+          return () => sleep(action.duration);
         case "delete":
           return () =>
             new Promise((resolve, reject) => {
               let i = 0;
               const interval = setInterval(() => {
-                if (!this.running) {
+                if (this.stopped) {
                   clearInterval(interval);
                   reject();
                 }
@@ -83,7 +89,7 @@ export default class TypeWriter {
           return () =>
             new Promise((resolve, reject) => {
               const interval = setInterval(() => {
-                if (!this.running) {
+                if (this.stopped) {
                   clearInterval(interval);
                   reject();
                 }
@@ -100,20 +106,25 @@ export default class TypeWriter {
   }
 
   async start() {
+    if (!this.stopped && this.delay) await sleep(this.delay);
+
+    this.stopped = false;
     this.running = true;
     let cb = this.queue.shift();
     while (cb != null) {
       await cb();
 
-      if (!this.running) break;
+      if (this.stopped) break;
 
       if (this.loop) this.queue.push(cb);
       cb = this.queue.shift();
     }
+    this.running = false;
   }
 
   stop() {
-    this.running = false;
+    this.stopped = true;
+    this.queue = [];
   }
 
   isRunning() {

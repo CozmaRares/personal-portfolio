@@ -10,6 +10,7 @@
   }
 
   main > section:not(.bleed) {
-    max-width: 50rem;
+    max-width: 60rem;
+    margin-inline: auto;
   }
 }
