@@ -35,7 +35,7 @@ const Intro = () => {
         <div className="w-[3px] flex-grow-[2] bg-gradient-to-t from-indigo-400 dark:from-green-500 sm:flex-grow-[1.5]" />
       </motion.div>
       <motion.div
-        className="pt-12 sm:pt-36"
+        className="pb-12 pt-12 sm:pt-36 md:pb-20"
         initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{
@@ -48,7 +48,7 @@ const Intro = () => {
           <p>Hey,</p>
           <p>
             I&apos;m{" "}
-            <span className="pr-[var(--shadow-off)] sm:text-indigo-500 sm:[--shadow-col:#71717a] sm:[--shadow-off:5px] sm:[text-shadow:var(--shadow-off)_0px_var(--shadow-col)] sm:dark:text-green-500 sm:dark:[--shadow-col:#94a3b8] md:[--shadow-off:7px]">
+            <span className="pr-[var(--shadow-off)] sm:text-indigo-500 sm:[--shadow-col:#71717a] sm:[--shadow-off:5px] sm:[text-shadow:var(--shadow-off)_0px_var(--shadow-col)] sm:dark:text-green-600 sm:dark:[--shadow-col:#94a3b8] md:[--shadow-off:7px]">
               R
             </span>
             areș,
@@ -84,20 +84,20 @@ const Intro = () => {
         <div className="mx-auto grid w-1/3 min-w-fit flex-col items-center gap-4 sm:mx-0 sm:w-fit sm:grid-cols-[repeat(3,auto)] md:text-lg">
           <Link
             href="#contact"
-            className="group flex w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full bg-black px-7 py-3 text-white transition neon-indigo hover:scale-110 focus:scale-110 active:scale-105 dark:bg-slate-300 dark:text-black dark:neon-green sm:w-fit"
+            className="group flex w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full bg-gray-950/80 px-7 py-3 text-white transition neon-indigo hover:scale-110 focus:scale-110 active:scale-105 dark:bg-slate-300/80 dark:text-black dark:neon-green sm:w-fit"
           >
             Contact me{" "}
-            <span className="transition-transform group-hover:translate-x-[2px] sm:hidden md:inline">
+            <span className="opacity-70 transition-transform delay-150 group-hover:translate-x-[2px] sm:hidden md:inline">
               <FaArrowRightLong />
             </span>
           </Link>
           <a
             href="/CV.pdf"
             download
-            className="group flex w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full border border-black/30 bg-white px-7 py-3 transition hover:scale-110 focus:scale-110 active:scale-105 dark:border-white/30 dark:bg-gray-900/40 sm:w-fit"
+            className="group flex w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full border border-black/30 bg-white/40 px-7 py-3 transition hover:scale-110 focus:scale-110 active:scale-105 dark:border-white/30 dark:bg-gray-900/40 sm:w-fit"
           >
             Download CV{" "}
-            <span className="transition-transform group-hover:translate-y-[2px] sm:hidden md:inline">
+            <span className="transition-transform delay-150  group-hover:translate-y-[2px] sm:hidden md:inline">
               <BsDownload />
             </span>
           </a>
@@ -105,7 +105,7 @@ const Intro = () => {
             href="https://github.com/CozmaRares/"
             target="_blank"
             aria-label="Github"
-            className="group flex h-full w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full border border-black/30 bg-white px-7 py-3 transition hover:scale-110 focus:scale-110 active:scale-105 dark:border-white/30 dark:bg-gray-900/40 sm:w-fit"
+            className="group flex h-full w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full border border-black/30 bg-white/50 px-7 py-3 transition hover:scale-110 focus:scale-110 active:scale-105 dark:border-white/30 dark:bg-gray-900/50 sm:w-fit"
           >
             <span className="sm:hidden">My Github</span>
             <FaGithubAlt />
