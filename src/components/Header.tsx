@@ -16,7 +16,7 @@ const Header = () => (
           <li key={link}>
             <Link
               href={`#${link}`}
-              className="rounded-full p-3 focus:bg-gray-300 dark:focus:bg-gray-700"
+              className="rounded-full p-3 transition-colors hover:bg-indigo-400/20 focus:bg-indigo-400/20 dark:hover:bg-green-700/40 dark:focus:bg-green-700/40"
             >
               {link}
             </Link>
