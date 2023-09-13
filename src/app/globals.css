@@ -6,7 +6,7 @@
   *,
   *::before,
   *::after {
-    @apply transition-colors duration-300 focus:outline-none;
+    @apply focus:outline-none;
   }
 
   main > section:not(.bleed) {
