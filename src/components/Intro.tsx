@@ -105,7 +105,7 @@ const Intro = () => {
             href="https://github.com/CozmaRares/"
             target="_blank"
             aria-label="Github"
-            className="group flex h-full w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full border border-black/30 bg-white px-7 py-3 transition hover:scale-110 focus:scale-110 active:scale-105 dark:border-white/30  dark:bg-gray-900/40 dark:bg-green-800 sm:w-fit"
+            className="group flex h-full w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full border border-black/30 bg-white px-7 py-3 transition hover:scale-110 focus:scale-110 active:scale-105 dark:border-white/30 dark:bg-gray-900/40 sm:w-fit"
           >
             <span className="sm:hidden">My Github</span>
             <FaGithubAlt />
