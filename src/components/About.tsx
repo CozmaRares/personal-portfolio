@@ -10,15 +10,15 @@ const About = () => (
   >
     <section className="line-container text-xl xs:text-2xl">
       <motion.div
-        className="flex scale-125 items-center justify-center text-indigo-600"
+        className="flex scale-125 items-center justify-center text-indigo-800 dark:text-green-400"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
-        <div className="inline-grid py-3">
+        <div className="inline-grid py-4">
           <span className="col-span-full row-span-full p-1">
             <FiCode />
           </span>
-          <span className="-z-10 col-span-full row-span-full aspect-square rounded-full bg-purple-300 blur-sm" />
+          <span className="-z-10 col-span-full row-span-full aspect-square rounded-full bg-purple-300/80 blur-sm dark:bg-cyan-900/70" />
         </div>
       </motion.div>
       <motion.h2
@@ -26,12 +26,12 @@ const About = () => (
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
       >
-        <span className="ml-8 mr-4 h-[1px] grow bg-indigo-400 sm:hidden" />
+        <span className="ml-8 mr-4 h-[1px] grow bg-indigo-400 dark:bg-green-300 sm:hidden" />
         About me
-        <span className="ml-4 mr-8 h-[1px] max-w-xs grow bg-indigo-400" />
+        <span className="ml-4 mr-8 h-[1px] max-w-xs grow bg-indigo-400 dark:bg-green-300" />
       </motion.h2>
       <motion.div
-        className="mx-auto w-line origin-top bg-gradient-to-b from-indigo-500"
+        className="mx-auto w-line origin-top bg-gradient-to-b from-indigo-500 dark:from-green-500"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{
