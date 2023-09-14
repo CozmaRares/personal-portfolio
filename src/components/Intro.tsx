@@ -21,7 +21,7 @@ const Intro = () => (
         duration: 0.15,
       }}
     >
-      <div className="w-[3px] flex-grow bg-gradient-to-b from-indigo-400 dark:from-green-500" />
+      <div className="w-line flex-grow bg-gradient-to-b from-indigo-400 dark:from-green-500" />
       <Image
         src="https://placehold.co/96"
         alt="Rares' portrait"
@@ -29,9 +29,9 @@ const Intro = () => (
         height={96}
         quality={80}
         priority
-        className="w-full aspect-square rounded-full neon-indigo-lg dark:neon-green-lg"
+        className="aspect-square w-full rounded-full neon-indigo-lg dark:neon-green-lg"
       />
-      <div className="w-[3px] flex-grow-[2] bg-gradient-to-t via-indigo-400 via-20% from-indigo-400 dark:from-green-500 sm:flex-grow-[1.5]" />
+      <div className="w-line flex-grow-[2] bg-gradient-to-t from-indigo-400 via-indigo-400 via-20% dark:from-green-500 sm:flex-grow-[1.5]" />
     </motion.div>
     <motion.div
       className="pb-12 pt-12 sm:pt-36 md:pb-20"
@@ -83,20 +83,20 @@ const Intro = () => (
       <div className="mx-auto grid w-1/3 min-w-fit flex-col items-center gap-4 sm:mx-0 sm:w-fit sm:grid-cols-[repeat(3,auto)] md:text-lg">
         <Link
           href="#contact"
-          className="group flex w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full bg-gray-950/80 px-7 py-3 text-white transition-transform neon-indigo hover:scale-110 focus:scale-110 active:scale-105 dark:bg-slate-300/80 dark:text-black dark:neon-green sm:w-fit"
+          className="group flex w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full bg-gray-950/80 px-7 py-3 text-white neon-indigo hover:scale-110 focus:scale-110 active:scale-105 motion-safe:transition-transform dark:bg-slate-300/80 dark:text-black dark:neon-green sm:w-fit"
         >
           Contact me{" "}
-          <span className="opacity-70 transition-transform delay-150 group-hover:translate-x-[2px] sm:hidden md:inline">
+          <span className="opacity-70 delay-150 group-hover:translate-x-[2px] motion-safe:transition-transform sm:hidden md:inline">
             <FaArrowRightLong />
           </span>
         </Link>
         <a
           href="/CV.pdf"
           download
-          className="group flex w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full border border-black/30 bg-white/40 px-7 py-3 transition-transform hover:scale-110 focus:scale-110 active:scale-105 dark:border-white/30 dark:bg-gray-900/40 sm:w-fit"
+          className="group flex w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full border border-black/30 bg-white/40 px-7 py-3 hover:scale-110 focus:scale-110 active:scale-105 motion-safe:transition-transform dark:border-white/30 dark:bg-gray-900/40 sm:w-fit"
         >
           Download CV{" "}
-          <span className="transition-transform delay-150  group-hover:translate-y-[2px] sm:hidden md:inline">
+          <span className="delay-150 group-hover:translate-y-[2px] motion-safe:transition-transform sm:hidden md:inline">
             <BsDownload />
           </span>
         </a>
@@ -104,7 +104,7 @@ const Intro = () => (
           href="https://github.com/CozmaRares/"
           target="_blank"
           aria-label="Github"
-          className="group flex h-full w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full border border-black/30 bg-white/50 px-7 py-3 transition-transform hover:scale-110 focus:scale-110 active:scale-105 dark:border-white/30 dark:bg-gray-900/50 sm:w-fit"
+          className="group flex h-full w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full border border-black/30 bg-white/50 px-7 py-3 hover:scale-110 focus:scale-110 active:scale-105 motion-safe:transition-transform dark:border-white/30 dark:bg-gray-900/50 sm:w-fit"
         >
           <span className="sm:hidden">My Github</span>
           <FaGithubAlt />

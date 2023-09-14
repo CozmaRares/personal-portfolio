@@ -41,7 +41,7 @@ const ThemeSwitch = () => {
       <motion.button
         key={theme}
         onClick={toggleTheme}
-        className="fixed bottom-5 right-5 scale-125 rounded-full bg-gray-100 p-1.5 transition-transform neon-indigo hover:scale-[1.4] focus:scale-[1.4] active:scale-[1.3] dark:bg-gray-950 dark:neon-green"
+        className="fixed bottom-5 right-5 scale-125 rounded-full bg-gray-100 p-1.5 neon-indigo hover:scale-[1.4] focus:scale-[1.4] active:scale-[1.3] motion-safe:transition-transform dark:bg-gray-950 dark:neon-green"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}

@@ -23,6 +23,9 @@ const config: Config = {
       screens: {
         xs: "400px",
       },
+      width: {
+        line: "3px",
+      },
     },
   },
   plugins: [

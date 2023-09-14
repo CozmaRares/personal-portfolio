@@ -8,13 +8,13 @@ const About = () => (
     transition={{ delay: 0.3 }}
     reducedMotion="user"
   >
-    <section className="line-container gap-y-2 py-2 text-xl xs:text-2xl">
+    <section className="line-container text-xl xs:text-2xl">
       <motion.div
-        className="flex-center flex scale-125 items-center justify-center text-indigo-600"
+        className="flex scale-125 items-center justify-center text-indigo-600"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
-        <div className="inline-grid">
+        <div className="inline-grid py-3">
           <span className="col-span-full row-span-full p-1">
             <FiCode />
           </span>
@@ -31,7 +31,7 @@ const About = () => (
         <span className="ml-4 mr-8 h-[1px] max-w-xs grow bg-indigo-400" />
       </motion.h2>
       <motion.div
-        className="mx-auto w-[3px] origin-top bg-gradient-to-b from-indigo-500"
+        className="mx-auto w-line origin-top bg-gradient-to-b from-indigo-500"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{
@@ -40,7 +40,7 @@ const About = () => (
         }}
       />
       <motion.div
-        className="space-y-4 pt-4 text-base !leading-[1.5] sm:text-lg"
+        className="space-y-4 pb-12 pt-4 text-base !leading-[1.5] sm:text-lg"
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
       >
