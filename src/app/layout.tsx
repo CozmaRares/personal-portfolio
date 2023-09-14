@@ -1,4 +1,3 @@
-import ThemeContextProvider from "@/context/theme";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -20,11 +19,9 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
     <body
       className={`${inter.className} bg-gray-100 px-4 text-gray-950 dark:bg-gray-900 dark:text-gray-50`}
     >
-      <ThemeContextProvider>
-        <Header />
-        {children}
-        <ThemeSwitch />
-      </ThemeContextProvider>
+      <Header />
+      {children}
+      <ThemeSwitch />
     </body>
   </html>
 );
