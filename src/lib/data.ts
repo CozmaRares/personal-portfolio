@@ -3,6 +3,5 @@ export const links = Object.freeze([
   "about",
   "projects",
   "skills",
-  "experience",
   "contact",
 ] as const);

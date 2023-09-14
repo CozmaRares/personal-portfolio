@@ -14,3 +14,14 @@
     margin-inline: auto;
   }
 }
+
+@layer components {
+  .line-container {
+    --col-1: 4rem;
+
+    display: grid;
+    grid-template-columns: var(--col-1) minmax(0, 1fr);
+
+    @apply xs:[--col-1:5rem] sm:gap-x-16 sm:[--col-1:6rem] md:gap-x-20;
+  }
+}

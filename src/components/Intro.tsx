@@ -11,14 +11,14 @@ import { FaArrowRightLong, FaGithubAlt } from "react-icons/fa6";
 const libre_franklin = Libre_Franklin({ subsets: ["latin-ext"] });
 
 const Intro = () => (
-  <section className="grid grid-cols-[auto,1fr] content-center sm:gap-16 md:gap-20">
+  <section className="line-container">
     <motion.div
-      className="flex flex-col items-center pl-3 sm:gap-2"
+      className="flex flex-col items-center sm:gap-2"
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{
         type: "tween",
-        duration: 0.25,
+        duration: 0.15,
       }}
     >
       <div className="w-[3px] flex-grow bg-gradient-to-b from-indigo-400 dark:from-green-500" />
@@ -29,16 +29,16 @@ const Intro = () => (
         height={96}
         quality={80}
         priority
-        className="h-16 w-16 rounded-full border-4 border-black neon-indigo-lg dark:neon-green-lg xs:h-20 xs:w-20 sm:h-24 sm:w-24"
+        className="w-full aspect-square rounded-full neon-indigo-lg dark:neon-green-lg"
       />
-      <div className="w-[3px] flex-grow-[2] bg-gradient-to-t from-indigo-400 dark:from-green-500 sm:flex-grow-[1.5]" />
+      <div className="w-[3px] flex-grow-[2] bg-gradient-to-t via-indigo-400 via-20% from-indigo-400 dark:from-green-500 sm:flex-grow-[1.5]" />
     </motion.div>
     <motion.div
       className="pb-12 pt-12 sm:pt-36 md:pb-20"
       initial={{ x: 100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{
-        duration: 0.25,
+        duration: 0.15,
       }}
     >
       <h1
@@ -73,7 +73,7 @@ const Intro = () => (
               ],
               {
                 loop: true,
-                delay: 240,
+                delay: 300,
                 typingSpeed: 80,
               },
             ]}
