@@ -21,7 +21,7 @@ const Intro = () => (
         duration: 0.15,
       }}
     >
-      <div className="w-line flex-grow bg-gradient-to-b from-indigo-400 dark:from-green-500" />
+      <div className="w-line flex-grow bg-gradient-to-b from-indigo-400 via-indigo-400 via-20% dark:from-green-500 dark:via-green-500" />
       <Image
         src="https://placehold.co/96"
         alt="Rares' portrait"
@@ -31,7 +31,7 @@ const Intro = () => (
         priority
         className="aspect-square w-full rounded-full neon-indigo-lg dark:neon-green-lg"
       />
-      <div className="w-line flex-grow-[2] bg-gradient-to-t from-indigo-400 via-indigo-400 via-20% dark:from-green-500 sm:flex-grow-[1.5]" />
+      <div className="w-line flex-grow-[2] bg-gradient-to-t from-indigo-400 via-indigo-400 via-20% dark:from-green-500 dark:via-green-500 sm:flex-grow-[1.5]" />
     </motion.div>
     <motion.div
       className="pb-12 pt-12 sm:pt-36 md:pb-20"
@@ -62,7 +62,7 @@ const Intro = () => (
                 { type: "clear" },
                 { type: "pause", duration: 500 },
                 { type: "add", text: "vim user" },
-                { type: "pause", duration: 200 },
+                { type: "pause", duration: 100 },
                 { type: "clear" },
                 { type: "pause", duration: 500 },
                 { type: "add", text: "web developer." },
@@ -97,7 +97,7 @@ const Intro = () => (
         <a
           href="/CV.pdf"
           download
-          className="group flex w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full border border-black/30 bg-white/40 px-7 py-3 hover:scale-110 focus:scale-110 active:scale-105 motion-safe:transition-transform dark:border-white/30 dark:bg-gray-900/40 sm:w-fit"
+          className="border-card group flex w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white/40 px-7 py-3 hover:scale-110 focus:scale-110 active:scale-105 motion-safe:transition-transform dark:bg-gray-900/40 sm:w-fit"
         >
           Download CV{" "}
           <span className="delay-150 group-hover:translate-y-[2px] motion-safe:transition-transform sm:hidden md:inline">
@@ -108,7 +108,7 @@ const Intro = () => (
           href="https://github.com/CozmaRares/"
           target="_blank"
           aria-label="Github"
-          className="group flex h-full w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full border border-black/30 bg-white/50 px-7 py-3 hover:scale-110 focus:scale-110 active:scale-105 motion-safe:transition-transform dark:border-white/30 dark:bg-gray-900/50 sm:w-fit"
+          className="border-card group flex h-full w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white/50 px-7 py-3 hover:scale-110 focus:scale-110 active:scale-105 motion-safe:transition-transform dark:bg-gray-900/50 sm:w-fit"
         >
           <span className="sm:hidden">My Github</span>
           <FaGithubAlt />

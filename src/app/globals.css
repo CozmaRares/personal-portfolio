@@ -9,7 +9,7 @@
     @apply focus:outline-none;
   }
 
-  main > section:not(.bleed) {
+  main > section {
     max-width: 60rem;
     margin-inline: auto;
   }
@@ -23,5 +23,13 @@
     grid-template-columns: var(--col-1) minmax(0, 1fr);
 
     @apply xs:[--col-1:5rem] sm:gap-x-16 sm:[--col-1:6rem] md:gap-x-20;
+  }
+
+  .border-card {
+    @apply border border-black/30 dark:border-white/30;
+  }
+
+  .text-heading {
+    @apply text-xl sm:text-2xl;
   }
 }

@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import Intro from "@/components/Intro";
+import Projects from "@/components/Projects";
 
 const Home = () => (
   <>
@@ -8,6 +9,7 @@ const Home = () => (
     <main className="mb-20 pt-24 sm:pt-0">
       <Intro />
       <About />
+      <Projects />
     </main>
   </>
 );

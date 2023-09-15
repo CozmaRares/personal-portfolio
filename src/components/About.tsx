@@ -8,7 +8,7 @@ const About = () => (
     transition={{ delay: 0.3 }}
     reducedMotion="user"
   >
-    <section className="line-container text-xl xs:text-2xl">
+    <section className="line-container text-heading">
       <motion.div
         className="flex scale-125 items-center justify-center text-indigo-800 dark:text-green-400"
         initial={{ opacity: 0 }}
@@ -31,7 +31,7 @@ const About = () => (
         <span className="mx-4 h-[1px] max-w-xs grow bg-indigo-400 dark:bg-green-300" />
       </motion.h2>
       <motion.div
-        className="mx-auto w-line origin-top bg-gradient-to-b from-indigo-500 dark:from-green-500"
+        className="mx-auto w-line origin-top bg-gradient-to-b from-indigo-400 via-indigo-400 via-20% dark:from-green-500 dark:via-green-500"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{
@@ -40,7 +40,7 @@ const About = () => (
         }}
       />
       <motion.div
-        className="space-y-4 pb-12 pt-4 text-base !leading-[1.5] sm:text-lg"
+        className="space-y-4 pb-36 pt-4 text-base !leading-[1.5] sm:text-lg"
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
       >
@@ -57,7 +57,7 @@ const About = () => (
         <p>
           In addition to my proficiency in C/C++ and my introduction to Java in
           my second year of college, I&apos;m open to mastering other backend
-          languages. ✨
+          languages.
         </p>
       </motion.div>
     </section>
