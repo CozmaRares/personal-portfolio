@@ -18,7 +18,7 @@ const About = () => (
           <span className="col-span-full row-span-full p-1">
             <FiCode />
           </span>
-          <span className="-z-10 col-span-full row-span-full aspect-square rounded-full bg-purple-300/80 blur-sm dark:bg-cyan-900/70" />
+          <span className="-z-10 col-span-full row-span-full aspect-square rounded-full bg-purple-300/70 blur-sm dark:bg-cyan-900/70" />
         </div>
       </motion.div>
       <motion.h2
@@ -28,7 +28,7 @@ const About = () => (
       >
         <span className="mx-4 h-[1px] grow bg-indigo-400 dark:bg-green-300 sm:hidden" />
         About me
-        <span className="ml-4 mr-4 sm:mr-8 h-[1px] max-w-xs grow bg-indigo-400 dark:bg-green-300" />
+        <span className="mx-4 h-[1px] max-w-xs grow bg-indigo-400 dark:bg-green-300" />
       </motion.h2>
       <motion.div
         className="mx-auto w-line origin-top bg-gradient-to-b from-indigo-500 dark:from-green-500"
@@ -55,8 +55,9 @@ const About = () => (
           exploring additional web frameworks.
         </p>
         <p>
-          Alongside my knowledge of C/C++ and Java, I&apos;m open to mastering
-          other backend languages. ✨
+          In addition to my proficiency in C/C++ and my introduction to Java in
+          my second year of college, I&apos;m open to mastering other backend
+          languages. ✨
         </p>
       </motion.div>
     </section>
