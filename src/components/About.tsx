@@ -26,9 +26,9 @@ const About = () => (
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
       >
-        <span className="ml-8 mr-4 h-[1px] grow bg-indigo-400 dark:bg-green-300 sm:hidden" />
+        <span className="mx-4 h-[1px] grow bg-indigo-400 dark:bg-green-300 sm:hidden" />
         About me
-        <span className="ml-4 mr-8 h-[1px] max-w-xs grow bg-indigo-400 dark:bg-green-300" />
+        <span className="ml-4 mr-4 sm:mr-8 h-[1px] max-w-xs grow bg-indigo-400 dark:bg-green-300" />
       </motion.h2>
       <motion.div
         className="mx-auto w-line origin-top bg-gradient-to-b from-indigo-500 dark:from-green-500"
