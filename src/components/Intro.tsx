@@ -43,12 +43,23 @@ const Intro = () => (
       }}
     >
       <h1
-        className={`${libre_franklin.className} pb-6 text-center text-xl !leading-[1.5] xs:text-3xl sm:pb-8 sm:text-left sm:text-5xl md:pb-12 md:text-6xl`}
+        className={`
+          ${libre_franklin.className} pb-6 text-center text-xl !leading-[1.5]
+          xs:text-3xl
+          sm:pb-8 sm:text-left sm:text-5xl
+          md:pb-12 md:text-6xl
+        `}
       >
         <p>Hey,</p>
         <p>
           I&apos;m{" "}
-          <span className="pr-[var(--shadow-off)] sm:text-indigo-500 sm:[--shadow-col:#71717a] sm:[--shadow-off:5px] sm:[text-shadow:var(--shadow-off)_0px_var(--shadow-col)] sm:dark:text-green-600 sm:dark:[--shadow-col:#94a3b8] md:[--shadow-off:7px]">
+          <span
+            className="pr-[var(--shadow-off)] sm:text-indigo-500
+            sm:[--shadow-col:#71717a] sm:[--shadow-off:5px]
+            sm:[text-shadow:var(--shadow-off)_0px_var(--shadow-col)]
+            sm:dark:text-green-600 sm:dark:[--shadow-col:#94a3b8]
+            md:[--shadow-off:7px]"
+          >
             R
           </span>
           areș,
@@ -85,10 +96,17 @@ const Intro = () => (
           />
         </p>
       </h1>
-      <div className="mx-auto grid w-1/3 min-w-fit flex-col items-center gap-4 sm:mx-0 sm:w-fit sm:grid-cols-[repeat(3,auto)] md:text-lg">
+      <div
+        className="mx-auto grid w-1/3 min-w-fit flex-col items-center gap-4
+        sm:mx-0 sm:w-fit sm:grid-cols-[repeat(3,auto)]
+        md:text-lg"
+      >
         <Link
           href="#contact"
-          className="group flex w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full bg-gray-950/80 px-7 py-3 text-white neon-indigo hover:scale-110 focus:scale-110 active:scale-105 motion-safe:transition-transform dark:bg-slate-300/80 dark:text-black dark:neon-green sm:w-fit"
+          className="group flex w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full bg-gray-950/80 px-7 py-3 text-white neon-indigo
+          hover:scale-110 focus:scale-110 active:scale-105
+          motion-safe:transition-transform
+          dark:bg-slate-300/80 dark:text-black dark:neon-green sm:w-fit"
         >
           Contact me{" "}
           <span className="opacity-70 delay-150 group-hover:translate-x-[2px] motion-safe:transition-transform sm:hidden md:inline">
@@ -98,7 +116,11 @@ const Intro = () => (
         <a
           href="/CV.pdf"
           download
-          className="border-card group flex w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white/40 px-7 py-3 hover:scale-110 focus:scale-110 active:scale-105 motion-safe:transition-transform dark:bg-gray-900/40 sm:w-fit"
+          className="border-card group flex w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white/40 px-7 py-3
+          hover:scale-110 focus:scale-110 active:scale-105
+          motion-safe:transition-transform
+          dark:bg-gray-900/40
+          sm:w-fit"
         >
           Download CV{" "}
           <span className="delay-150 group-hover:translate-y-[2px] motion-safe:transition-transform sm:hidden md:inline">
@@ -109,7 +131,10 @@ const Intro = () => (
           href="https://github.com/CozmaRares/"
           target="_blank"
           aria-label="Github"
-          className="border-card group flex h-full w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white/50 px-7 py-3 hover:scale-110 focus:scale-110 active:scale-105 motion-safe:transition-transform dark:bg-gray-900/50 sm:w-fit"
+          className="border-card group flex h-full w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white/50 px-7 py-3
+          hover:scale-110 focus:scale-110 active:scale-105
+          motion-safe:transition-transform
+          dark:bg-gray-900/50 sm:w-fit"
         >
           <span className="sm:hidden">My Github</span>
           <FaGithubAlt />

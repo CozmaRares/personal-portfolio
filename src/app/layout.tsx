@@ -20,7 +20,10 @@ const RootLayout = ({ children }: Props) => (
     className="!scroll-smooth"
   >
     <body
-      className={`${inter.className} bg-gray-100 px-4 text-gray-950 dark:bg-gray-900 dark:text-gray-50`}
+      className={`
+        ${inter.className} bg-gray-100 px-4 text-gray-950
+        dark:bg-gray-900 dark:text-gray-50
+      `}
     >
       <MotionConfigWrapper reducedMotion="user">
         <Header />
