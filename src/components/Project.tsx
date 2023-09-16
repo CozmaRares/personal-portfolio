@@ -5,7 +5,12 @@ import Image from "next/image";
 import { PiGithubLogoBold } from "react-icons/pi";
 import { HiExternalLink } from "react-icons/hi";
 import { cn } from "@/lib/utils";
-import { motion, useMotionTemplate, useScroll } from "framer-motion";
+import {
+  motion,
+  useMotionTemplate,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { useRef } from "react";
 
 const Project: React.FC<(typeof projectData.showcase)[number]> = ({
@@ -19,15 +24,16 @@ const Project: React.FC<(typeof projectData.showcase)[number]> = ({
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["0 1", "1.20 1"],
+    offset: ["0 1", "0.7 1"],
   });
   const transform = useMotionTemplate`translateX(calc(var(--direction, 1) * calc(500px * calc(1 - ${scrollYProgress}))))`;
+  const opacity = useTransform(() => 0.5 + scrollYProgress.get() ** 4 / 2);
 
   return (
     <motion.article
       ref={ref}
-      style={{ transform }}
-      className="border-card flex flex-col items-center gap-6 rounded-xl bg-indigo-50 p-8 text-right group-even:[--direction:-1] dark:bg-[#141A1E] lg:flex-row lg:text-left lg:group-even:flex-row-reverse"
+      style={{ transform, opacity }}
+      className="border-card mx-auto flex h-full max-w-[650px] flex-col items-center gap-6 rounded-xl bg-indigo-50 p-8 text-right group-even:[--direction:-1] dark:bg-[#141A1E] md:max-w-[initial] lg:flex-row lg:text-left lg:group-even:flex-row-reverse"
     >
       <a
         href={demoLink}
@@ -48,7 +54,7 @@ const Project: React.FC<(typeof projectData.showcase)[number]> = ({
         <p className="z-10 rounded-lg bg-gray-50 from-gray-50 via-gray-50 via-40% p-4 text-sm [text-wrap:balance] dark:bg-gray-900 dark:from-gray-900 dark:via-gray-900 sm:text-base md:p-6 lg:bg-transparent lg:group-odd:-ml-12 lg:group-odd:bg-gradient-to-r lg:group-odd:!pr-0 lg:group-even:-mr-12 lg:group-even:bg-gradient-to-l lg:group-even:!pl-0">
           {description}
         </p>
-        <ul className="flex flex-row gap-2 text-xs md:gap-4 md:text-sm">
+        <ul className="flex flex-row flex-wrap justify-center gap-2 text-xs md:justify-end md:gap-4 md:text-sm">
           {tags.map(tag => (
             <li key={`project-showcase-${title}-{tag}`}>{tag}</li>
           ))}
