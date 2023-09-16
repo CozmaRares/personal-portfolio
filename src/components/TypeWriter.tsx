@@ -1,11 +1,17 @@
 import useTypeWriter from "@/hooks/useTypeWriter";
 import { cn } from "@/lib/utils";
 
-const TypeWriter: React.FC<{
+type Props = {
   typeWriter: Parameters<typeof useTypeWriter>;
   className?: string;
   blinkerClassName?: string;
-}> = ({ typeWriter: typeWrProps, className, blinkerClassName }) => {
+};
+
+const TypeWriter = ({
+  typeWriter: typeWrProps,
+  className,
+  blinkerClassName,
+}: Props) => {
   const { text, typeWriter } = useTypeWriter(...typeWrProps);
 
   return (

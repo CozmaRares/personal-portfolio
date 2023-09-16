@@ -7,11 +7,12 @@ import { Libre_Franklin } from "next/font/google";
 import Link from "next/link";
 import { BsDownload } from "react-icons/bs";
 import { FaArrowRightLong, FaGithubAlt } from "react-icons/fa6";
+import Line from "./Line";
 
 const libre_franklin = Libre_Franklin({ subsets: ["latin-ext"] });
 
 const Intro = () => (
-  <section className="line-container">
+  <section className={Line.containerClass}>
     <motion.div
       className="flex flex-col items-center sm:gap-2"
       initial={{ x: -100, opacity: 0 }}
@@ -21,7 +22,7 @@ const Intro = () => (
         duration: 0.15,
       }}
     >
-      <div className="w-line flex-grow bg-gradient-to-b from-indigo-400 via-indigo-400 via-20% dark:from-green-500 dark:via-green-500" />
+      <Line className="flex-grow" />
       <Image
         src="https://placehold.co/96"
         alt="Rares' portrait"
@@ -31,7 +32,7 @@ const Intro = () => (
         priority
         className="aspect-square w-full rounded-full neon-indigo-lg dark:neon-green-lg"
       />
-      <div className="w-line flex-grow-[2] bg-gradient-to-t from-indigo-400 via-indigo-400 via-20% dark:from-green-500 dark:via-green-500 sm:flex-grow-[1.5]" />
+      <Line className="flex-grow-[2] bg-gradient-to-t" />
     </motion.div>
     <motion.div
       className="pb-12 pt-12 sm:pt-36 md:pb-20"

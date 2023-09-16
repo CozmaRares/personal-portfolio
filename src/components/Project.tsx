@@ -13,14 +13,16 @@ import {
 } from "framer-motion";
 import { useRef } from "react";
 
-const Project: React.FC<(typeof projectData.showcase)[number]> = ({
+type Props = (typeof projectData.showcase)[number];
+
+const Project = ({
   title,
   description,
   tags,
   githubLink,
   demoLink,
   image,
-}) => {
+}: Props) => {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,

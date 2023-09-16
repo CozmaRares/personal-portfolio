@@ -2,6 +2,7 @@
 
 import { FiCode } from "react-icons/fi";
 import { motion, MotionConfig } from "framer-motion";
+import Line from "./Line";
 
 const About = () => (
   <MotionConfig
@@ -14,12 +15,9 @@ const About = () => (
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
-        <div className="inline-grid py-4">
-          <span className="col-span-full row-span-full p-1">
-            <FiCode />
-          </span>
-          <span className="-z-10 col-span-full row-span-full aspect-square rounded-full bg-purple-300/70 blur-sm dark:bg-cyan-900/70" />
-        </div>
+        <Line.breakPoint>
+          <FiCode />
+        </Line.breakPoint>
       </motion.div>
       <motion.h2
         className="flex flex-row items-center"
@@ -30,8 +28,8 @@ const About = () => (
         About me
         <span className="mx-4 h-[1px] max-w-xs grow bg-indigo-400 dark:bg-green-300" />
       </motion.h2>
-      <motion.div
-        className="mx-auto w-line origin-top bg-gradient-to-b from-indigo-400 via-indigo-400 via-20% dark:from-green-500 dark:via-green-500"
+      <Line.motion
+        className="mx-auto origin-top"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{
