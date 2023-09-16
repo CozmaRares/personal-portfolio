@@ -36,7 +36,7 @@ const Project = ({
       ref={ref}
       style={{ transform, opacity }}
       className="border-card mx-auto flex h-full max-w-[650px] flex-col items-center gap-6 rounded-xl bg-indigo-100 p-8 text-right
-      group-even:[--direction:-1] dark:bg-[#242627]
+      group-even:[--direction:-1] dark:bg-[#091303]
       md:max-w-[initial]
       lg:flex-row lg:group-even:flex-row-reverse lg:group-even:text-left"
     >
