@@ -35,10 +35,10 @@ const Project = ({
     <motion.article
       ref={ref}
       style={{ transform, opacity }}
-      className="border-card mx-auto flex h-full max-w-[650px] flex-col items-center gap-6 rounded-xl bg-indigo-100 p-8 text-right
+      className="border-card mx-auto flex h-full max-w-[650px] flex-col items-center gap-6 rounded-xl bg-indigo-100 p-8
       group-even:[--direction:-1] dark:bg-[#091303]
       md:max-w-[initial]
-      lg:flex-row lg:group-even:flex-row-reverse lg:group-even:text-left"
+      lg:flex-row lg:group-odd:text-right lg:group-even:flex-row-reverse"
     >
       <a
         href={demoLink}
@@ -54,19 +54,19 @@ const Project = ({
           })}
         />
       </a>
-      <div className="flex flex-col items-end justify-between gap-6 lg:w-1/2 lg:group-even:items-start">
-        <h3 className="text-heading font-medium">{title}</h3>
+      <div className="flex w-full flex-grow flex-col justify-between gap-6 lg:w-1/2 lg:items-end lg:group-even:items-start">
+        <h3 className="text-heading font-medium capitalize">{title}</h3>
         <p
-          className="z-10 rounded-lg bg-gray-50 from-gray-50 p-4 text-sm [text-wrap:balance] dark:bg-gray-900 dark:from-gray-900
+          className="z-10 rounded-lg bg-gray-50 from-gray-50 p-4 text-sm [text-wrap:balance] dark:bg-gray-800 dark:from-gray-800
           sm:text-base md:p-6 lg:!bg-transparent
           lg:group-odd:-ml-12 lg:group-odd:bg-gradient-to-r lg:group-odd:!pr-0
           lg:group-even:-mr-12 lg:group-even:bg-gradient-to-l lg:group-even:!pl-0"
         >
           {description}
         </p>
-        <ul className="flex flex-row flex-wrap justify-center gap-2 text-xs md:justify-end md:gap-4 md:text-sm">
+        <ul className="flex flex-row flex-wrap gap-2 text-xs capitalize md:gap-4 md:text-sm">
           {tags.map(tag => (
-            <li key={`project-showcase-${title}-{tag}`}>{tag}</li>
+            <li key={`project-showcase-${title}-${tag}`}>{tag}</li>
           ))}
         </ul>
         <div className="flex flex-row gap-4 text-lg">
@@ -74,17 +74,18 @@ const Project = ({
             href={githubLink}
             target="_blank"
             aria-label="link to code"
-            className="transition-colors hover:text-indigo-600 dark:hover:text-green-500"
+            className="flex flex-row items-center gap-1 transition-colors hover:text-indigo-600 dark:hover:text-green-500"
           >
-            <PiGithubLogoBold />
+            Code <PiGithubLogoBold />
           </a>
           {demoLink && (
             <a
               href={demoLink}
               target="_blank"
               aria-label="link to demo"
-              className="transition-colors hover:text-indigo-600 dark:hover:text-green-500"
+              className="flex flex-row items-center gap-1 transition-colors hover:text-indigo-600 dark:hover:text-green-500"
             >
+              Demo
               <HiExternalLink />
             </a>
           )}

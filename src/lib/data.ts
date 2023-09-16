@@ -26,7 +26,7 @@ export const projectData: Readonly<{
     {
       title: "Beer Boutique",
       description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus quaerat ducimus dolorum dolorem laudantium porro dolor debitis inventore architecto! Exercitationem.",
+        "Stylish and interactive mock beer pub website with a responsive user interface.",
       tags: [
         "React",
         "TypeScript",
@@ -40,8 +40,7 @@ export const projectData: Readonly<{
     },
     {
       title: "Krypto | NFT",
-      description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus quaerat ducimus dolorum dolorem laudantium porro dolor debitis inventore architecto! Exercitationem.",
+      description: "Responsive landing page for a fictitious NFT market.",
       tags: ["React", "TypeScript", "TailwindCSS", "GitHub Pages", "Figma"],
       githubLink: "https://github.com/CozmaRares/nft-landing",
       demoLink: "https://nft-landing.raru.dev/",
@@ -50,7 +49,7 @@ export const projectData: Readonly<{
     {
       title: "Chess Online",
       description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus quaerat ducimus dolorum dolorem laudantium porro dolor debitis inventore architecto! Exercitationem.",
+        "A chess game website featuring both multiplayer and local gameplay modes, with a custom-built chess engine. Emphasis was placed on server functionality rather than UI.",
       tags: [
         "SocketIO",
         "React",
@@ -66,7 +65,7 @@ export const projectData: Readonly<{
     {
       title: "C HTTP Server",
       description:
-        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus quaerat ducimus dolorum dolorem laudantium porro dolor debitis inventore architecto! Exercitationem.",
+        "An HTTP server with file-based routing for serving static content and custom routes for dynamic functionality.",
       tags: ["C", "Makefile", "Data Structures"],
       githubLink: "https://github.com/CozmaRares/c-server",
       image: serverImg,
