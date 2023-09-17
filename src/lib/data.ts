@@ -158,3 +158,26 @@ export const projectData = Object.freeze({
   featured: FeaturedProjectType[];
   other: ProjectType[];
 }>);
+
+export const skills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Node.js",
+  "Express",
+  "Framer Motion",
+  "Vite",
+  "Vitest",
+  "Socket.IO",
+  "TailwindCSS",
+  "Git",
+  "C/C++",
+  "Makefile",
+  "Java",
+  "JUnit",
+  "SurrealDB",
+  "Basic AWS"
+] as const;

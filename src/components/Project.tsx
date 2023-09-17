@@ -2,6 +2,7 @@ import type { ProjectType } from "@/lib/data";
 import { PiGithubLogoBold } from "react-icons/pi";
 import TagList from "./TagList";
 import { createElement } from "react";
+import { headingFont } from "@/lib/fonts";
 
 const Project = ({
   title,
@@ -21,7 +22,7 @@ const Project = ({
       Code <PiGithubLogoBold />
     </a>
     <div className="col-span-full flex flex-col justify-between gap-4">
-      <h3 className="text-heading">{title}</h3>
+      <h3 className={`${headingFont.className} text-heading`}>{title}</h3>
       <p className="">{description}</p>
       <TagList
         keyPrefix={`project-other-${title}`}
