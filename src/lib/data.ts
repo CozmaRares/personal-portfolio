@@ -2,7 +2,8 @@ import beerBoutiqueImg from "@/../public/projects/beer-boutique.png";
 import kryptoImg from "@/../public/projects/krypto-nft.png";
 import chessImg from "@/../public/projects/chess.png";
 import serverImg from "@/../public/projects/c-server.png";
-import { StaticImageData } from "next/image";
+import type { StaticImageData } from "next/image";
+import type { Prettify } from "./types";
 
 export const sections = Object.freeze([
   "home",
@@ -12,17 +13,25 @@ export const sections = Object.freeze([
   "contact",
 ] as const);
 
+export type SectionName = (typeof sections)[number];
+
+export type ProjectType = {
+  title: string;
+  description: string;
+  tags: string[];
+  githubLink: string;
+  demoLink?: string;
+};
+
+export type FeaturedProjectType = Prettify<
+  ProjectType & { image: StaticImageData }
+>;
+
 export const projectData: Readonly<{
-  showcase: {
-    title: string;
-    description: string;
-    tags: string[];
-    githubLink: string;
-    demoLink?: string;
-    image: StaticImageData;
-  }[];
+  featured: FeaturedProjectType[];
+  other: ProjectType[];
 }> = Object.freeze({
-  showcase: [
+  featured: [
     {
       title: "Beer Boutique",
       description:
@@ -51,7 +60,7 @@ export const projectData: Readonly<{
       description:
         "A chess game website featuring both multiplayer and local gameplay modes, with a custom-built chess engine. Emphasis was placed on server functionality rather than UI.",
       tags: [
-        "SocketIO",
+        "Socket.IO",
         "React",
         "TypeScript",
         "TailwindCSS",
@@ -71,4 +80,5 @@ export const projectData: Readonly<{
       image: serverImg,
     },
   ],
+  other: [],
 });

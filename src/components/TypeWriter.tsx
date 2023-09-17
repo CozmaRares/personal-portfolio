@@ -20,7 +20,7 @@ const TypeWriter = ({
       <span
         aria-hidden
         className={cn(
-          "inline-block animate-blink",
+          "inline-block animate-blink font-thin",
           { hidden: !typeWriter?.isRunning() },
           blinkerClassName,
         )}

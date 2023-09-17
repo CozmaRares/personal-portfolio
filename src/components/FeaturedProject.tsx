@@ -1,6 +1,6 @@
 "use client";
 
-import { projectData } from "@/lib/data";
+import type { FeaturedProjectType } from "@/lib/data";
 import Image from "next/image";
 import { PiGithubLogoBold } from "react-icons/pi";
 import { HiExternalLink } from "react-icons/hi";
@@ -12,17 +12,16 @@ import {
   useTransform,
 } from "framer-motion";
 import { useRef } from "react";
+import { detailFont, headingFont } from "@/lib/fonts";
 
-type Props = (typeof projectData.showcase)[number];
-
-const Project = ({
+const FeaturedProject = ({
   title,
   description,
   tags,
   githubLink,
   demoLink,
   image,
-}: Props) => {
+}: FeaturedProjectType) => {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -37,8 +36,10 @@ const Project = ({
       style={{ transform, opacity }}
       className="border-card mx-auto flex h-full max-w-[650px] flex-col items-center gap-6 rounded-xl bg-indigo-100 p-8
       group-even:[--direction:-1] dark:bg-[#091303]
-      md:max-w-[initial]
-      lg:flex-row lg:group-odd:text-right lg:group-even:flex-row-reverse"
+      md:max-w-[initial] md:group-odd:[--direction:-1]
+      md:group-even:[--direction:1] lg:flex-row
+      lg:group-odd:text-right
+      lg:group-odd:[--direction:1] lg:group-even:flex-row-reverse lg:group-even:[--direction:-1]"
     >
       <a
         href={demoLink}
@@ -55,7 +56,11 @@ const Project = ({
         />
       </a>
       <div className="flex w-full flex-grow flex-col justify-between gap-6 lg:w-1/2 lg:items-end lg:group-even:items-start">
-        <h3 className="text-heading font-medium capitalize">{title}</h3>
+        <h3
+          className={`${headingFont.className} text-heading font-medium capitalize`}
+        >
+          {title}
+        </h3>
         <p
           className="z-10 rounded-lg bg-gray-50 from-gray-50 p-4 text-sm [text-wrap:balance] dark:bg-gray-800 dark:from-gray-800
           sm:text-base md:p-6 lg:!bg-transparent
@@ -64,7 +69,9 @@ const Project = ({
         >
           {description}
         </p>
-        <ul className="flex flex-row flex-wrap gap-2 text-xs capitalize md:gap-4 md:text-sm">
+        <ul
+          className={`${detailFont.className} flex flex-row flex-wrap gap-2 text-sm capitalize md:gap-4`}
+        >
           {tags.map(tag => (
             <li key={`project-showcase-${title}-${tag}`}>{tag}</li>
           ))}
@@ -95,4 +102,4 @@ const Project = ({
   );
 };
 
-export default Project;
+export default FeaturedProject;

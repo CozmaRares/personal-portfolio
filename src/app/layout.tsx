@@ -1,11 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import ThemeSwitch from "@/components/ThemeSwitch";
 import Header from "@/components/Header";
 import MotionConfigWrapper from "@/components/MotionConfigWrapper";
-
-const inter = Inter({ subsets: ["latin"] });
+import ActiveSectionContextProvider from "@/context/active-section";
+import { defaultFont } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "Rares | Portfolio",
@@ -20,14 +19,13 @@ const RootLayout = ({ children }: Props) => (
     className="!scroll-smooth"
   >
     <body
-      className={`
-        ${inter.className} bg-gray-100 px-4 text-gray-950
-        dark:bg-gray-900 dark:text-gray-50
-      `}
+      className={`${defaultFont.className} bg-gray-100 px-4 text-gray-950 dark:bg-gray-900 dark:text-gray-50`}
     >
       <MotionConfigWrapper reducedMotion="user">
-        <Header />
-        {children}
+        <ActiveSectionContextProvider>
+          <Header />
+          {children}
+        </ActiveSectionContextProvider>
         <ThemeSwitch />
       </MotionConfigWrapper>
     </body>

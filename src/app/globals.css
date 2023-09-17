@@ -3,15 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-  *,
-  *::before,
-  *::after {
-    @apply focus:outline-none;
-  }
-
   main > section {
     max-width: 60rem;
     margin-inline: auto;
+    scroll-margin-top: 8rem;
   }
 }
 
@@ -22,7 +17,7 @@
     display: grid;
     grid-template-columns: var(--col-1) minmax(0, 1fr);
 
-    @apply xs:[--col-1:5rem] sm:gap-x-16 sm:[--col-1:6rem] md:gap-x-20;
+    @apply xs:[--col-1:5rem] sm:gap-x-12 sm:[--col-1:6rem];
   }
 
   .border-card {
@@ -30,6 +25,10 @@
   }
 
   .text-heading {
-    @apply text-xl sm:text-2xl;
+    @apply text-xl font-semibold sm:text-2xl;
+  }
+
+  .space-bottom {
+    @apply pb-24 sm:pb-40;
   }
 }
