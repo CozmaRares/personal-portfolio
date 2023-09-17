@@ -1,34 +1,66 @@
 "use client";
 
-import { projectData } from "@/lib/data";
-import FeaturedProject from "./FeaturedProject";
+import Line from "./Line";
+import { useState } from "react";
+import { IoCode, IoCodeSlash } from "react-icons/io5";
 import { headingFont } from "@/lib/fonts";
-import useSectionInView from "@/hooks/useSectionInView";
+import { projectData } from "@/lib/data";
+import Project from "./Project";
+import { cn } from "@/lib/utils";
 
 const Projects = () => {
-  const { ref } = useSectionInView("projects", 0.2);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <section
-      ref={ref}
-      className="relative scroll-m-44"
-      id="projects"
-    >
-      <h2
-        className={`${headingFont.className} text-heading absolute -top-16 left-1/2 -translate-x-1/2`}
-      >
-        Projects
-      </h2>
-      <ul className="grid gap-8 overflow-x-hidden px-[2px] pb-2 md:grid-cols-2 md:gap-4 lg:grid-cols-1 lg:gap-14">
-        {projectData.featured.map(data => (
-          <li
-            key={`project-showcase-${data.title}`}
-            className="group"
+    <section className={`${Line.containerClass} gap-x-0`}>
+      {isOpen && (
+        <>
+          <div className="mx-auto">
+            <Line className="h-full bg-gradient-to-t" />
+          </div>
+          <div className="pt-20" />
+          <div className="col-start-1 flex items-center justify-center">
+            <Line.breakPoint>
+              <IoCode />
+            </Line.breakPoint>
+          </div>
+          <h2
+            className={`${headingFont.className} text-heading flex flex-row items-center justify-center gap-8 sm:justify-start`}
           >
-            <FeaturedProject {...data} />
-          </li>
-        ))}
-      </ul>
+            <span className="hidden h-[1px] w-1/4 bg-indigo-500 dark:bg-green-600 sm:block" />
+            <span className={`${headingFont.className} text-heading`}>
+              Other projects
+            </span>
+          </h2>
+          <div>
+            <Line className="mx-auto h-1/2 dark:to-green-800" />
+            <Line className="mx-auto h-1/2 bg-gradient-to-t dark:to-green-800" />
+          </div>
+          <ul className="grid-like-flex py-12 pr-3 [--gap:1rem] sm:[--cols:2] lg:[--cols:3]">
+            {projectData.other.map(data => (
+              <li key={`project-other-${data.title}`}>
+                <Project {...data} />
+              </li>
+            ))}
+          </ul>
+          <div className="mx-auto">
+            <Line.breakPoint>
+              <IoCodeSlash />
+            </Line.breakPoint>
+          </div>
+        </>
+      )}
+      <button
+        onClick={() => setIsOpen(prev => !prev)}
+        className={cn(
+          `mx-auto h-12 w-36 rounded-xl border-2 border-indigo-600 p-3 text-indigo-600 transition-[background-color]
+          hover:bg-indigo-300/20 dark:border-green-400
+          dark:text-green-400 dark:hover:bg-green-700/20`,
+          { "col-span-full mt-12": !isOpen },
+        )}
+      >
+        Show {isOpen ? "less" : "more"}
+      </button>
     </section>
   );
 };

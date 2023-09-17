@@ -4,7 +4,7 @@
 
 @layer base {
   main > section {
-    max-width: 60rem;
+    max-width: 65rem;
     margin-inline: auto;
     scroll-margin-top: 8rem;
   }
@@ -24,11 +24,27 @@
     @apply border border-black/30 dark:border-white/30;
   }
 
+  .card {
+    @apply border-card rounded-xl bg-indigo-100 dark:bg-[#091303];
+  }
+
   .text-heading {
-    @apply text-xl font-semibold sm:text-2xl;
+    @apply text-xl font-semibold capitalize sm:text-2xl;
   }
 
   .space-bottom {
     @apply pb-24 sm:pb-40;
+  }
+
+  .grid-like-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    justify-content: center;
+  }
+
+  .grid-like-flex > * {
+    width: calc((100% - var(--gap) * (var(--cols) - 1)) / var(--cols, 1));
   }
 }

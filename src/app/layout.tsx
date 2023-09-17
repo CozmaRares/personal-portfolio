@@ -19,7 +19,7 @@ const RootLayout = ({ children }: Props) => (
     className="!scroll-smooth"
   >
     <body
-      className={`${defaultFont.className} bg-gray-100 px-4 text-gray-950 dark:bg-gray-900 dark:text-gray-50`}
+      className={`${defaultFont.className} bg-gray-100 text-gray-950 dark:bg-gray-900 dark:text-gray-50`}
     >
       <MotionConfigWrapper reducedMotion="user">
         <ActiveSectionContextProvider>

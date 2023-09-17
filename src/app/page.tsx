@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import Intro from "@/components/Intro";
+import FeaturedProjects from "@/components/FeaturedProjects";
 import Projects from "@/components/Projects";
 
 const Home = () => (
@@ -18,9 +19,10 @@ const Home = () => (
       lg:left-12
       xl:left-60"
     />
-    <main className="mb-20 pt-24 sm:pt-0">
+    <main className="mb-20 overflow-x-hidden px-4 pt-24 sm:pt-0">
       <Intro />
       <About />
+      <FeaturedProjects />
       <Projects />
     </main>
   </>

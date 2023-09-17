@@ -1,13 +1,13 @@
 "use client";
 
-import { FiCode } from "react-icons/fi";
+import { FaQuestion } from "react-icons/fa";
 import { motion, MotionConfig } from "framer-motion";
 import Line from "./Line";
 import { headingFont } from "@/lib/fonts";
 import useSectionInView from "@/hooks/useSectionInView";
 
 const About = () => {
-  const { ref } = useSectionInView("about");
+  const { ref } = useSectionInView("about", 0.95);
 
   return (
     <MotionConfig
@@ -16,16 +16,16 @@ const About = () => {
     >
       <section
         ref={ref}
-        className="line-container"
+        className={Line.containerClass}
         id="about"
       >
         <motion.div
-          className="flex scale-125 items-center justify-center text-indigo-800 dark:text-green-400"
+          className="flex items-center justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
           <Line.breakPoint>
-            <FiCode />
+            <FaQuestion />
           </Line.breakPoint>
         </motion.div>
         <motion.h2

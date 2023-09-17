@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { sections } from "@/lib/data";
 import Link from "next/link";
 import { useActiveSectionContext } from "@/context/active-section";
-import { cn } from "@/lib/utils";
 
 const Header = () => {
   const { activeSection, setActiveSection } = useActiveSectionContext();
@@ -23,7 +22,7 @@ const Header = () => {
             <li key={section}>
               <Link
                 href={`#${section}`}
-                className={cn("relative rounded-full p-3", {})}
+                className="relative rounded-full p-3"
                 onClick={() => setActiveSection(section)}
               >
                 {section}

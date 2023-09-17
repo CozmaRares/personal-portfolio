@@ -12,7 +12,8 @@ import {
   useTransform,
 } from "framer-motion";
 import { useRef } from "react";
-import { detailFont, headingFont } from "@/lib/fonts";
+import { headingFont } from "@/lib/fonts";
+import TagList from "./TagList";
 
 const FeaturedProject = ({
   title,
@@ -27,19 +28,19 @@ const FeaturedProject = ({
     target: ref,
     offset: ["0 1", "0.7 1"],
   });
-  const transform = useMotionTemplate`translateX(calc(var(--direction, 1) * calc(500px * calc(1 - ${scrollYProgress}))))`;
+  const transform = useMotionTemplate`translateX(calc(var(--direction, 1) * 500px * (1 - ${scrollYProgress})))`;
   const opacity = useTransform(() => 0.5 + scrollYProgress.get() ** 4 / 2);
 
   return (
     <motion.article
       ref={ref}
       style={{ transform, opacity }}
-      className="border-card mx-auto flex h-full max-w-[650px] flex-col items-center gap-6 rounded-xl bg-indigo-100 p-8
-      group-even:[--direction:-1] dark:bg-[#091303]
+      className="card mx-auto flex h-full max-w-[650px] flex-col items-center gap-6 p-8
+      group-even:[--direction:-1]
       md:max-w-[initial] md:group-odd:[--direction:-1]
       md:group-even:[--direction:1] lg:flex-row
-      lg:group-odd:text-right
-      lg:group-odd:[--direction:1] lg:group-even:flex-row-reverse lg:group-even:[--direction:-1]"
+      lg:group-odd:text-right lg:group-odd:[--direction:1]
+      lg:group-even:flex-row-reverse lg:group-even:[--direction:-1]"
     >
       <a
         href={demoLink}
@@ -56,26 +57,22 @@ const FeaturedProject = ({
         />
       </a>
       <div className="flex w-full flex-grow flex-col justify-between gap-6 lg:w-1/2 lg:items-end lg:group-even:items-start">
-        <h3
-          className={`${headingFont.className} text-heading font-medium capitalize`}
-        >
+        <h3 className={`${headingFont.className} text-heading font-medium`}>
           {title}
         </h3>
         <p
-          className="z-10 rounded-lg bg-gray-50 from-gray-50 p-4 text-sm [text-wrap:balance] dark:bg-gray-800 dark:from-gray-800
+          className="z-10 rounded-lg bg-gray-50 from-gray-50 p-4 text-sm 
+          dark:bg-gray-800 dark:from-gray-800
           sm:text-base md:p-6 lg:!bg-transparent
           lg:group-odd:-ml-12 lg:group-odd:bg-gradient-to-r lg:group-odd:!pr-0
           lg:group-even:-mr-12 lg:group-even:bg-gradient-to-l lg:group-even:!pl-0"
         >
           {description}
         </p>
-        <ul
-          className={`${detailFont.className} flex flex-row flex-wrap gap-2 text-sm capitalize md:gap-4`}
-        >
-          {tags.map(tag => (
-            <li key={`project-showcase-${title}-${tag}`}>{tag}</li>
-          ))}
-        </ul>
+        <TagList
+          keyPrefix={`project-showcase-${title}`}
+          tags={tags}
+        />
         <div className="flex flex-row gap-4 text-lg">
           <a
             href={githubLink}
