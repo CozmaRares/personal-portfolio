@@ -6,7 +6,7 @@ import { headingFont } from "@/lib/fonts";
 import useSectionInView from "@/hooks/useSectionInView";
 
 const FeaturedProjects = () => {
-  const { ref } = useSectionInView("projects", 0.2);
+  const { ref } = useSectionInView("projects", 0.3);
 
   return (
     <section

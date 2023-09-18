@@ -33,7 +33,7 @@
   }
 
   .space-bottom {
-    @apply pb-24 sm:pb-40;
+    @apply pb-32 sm:pb-40;
   }
 
   .grid-like-flex {

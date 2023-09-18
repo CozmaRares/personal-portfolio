@@ -7,7 +7,7 @@ import { headingFont } from "@/lib/fonts";
 import useSectionInView from "@/hooks/useSectionInView";
 
 const About = () => {
-  const { ref } = useSectionInView("about", 0.95);
+  const { ref } = useSectionInView("about");
 
   return (
     <MotionConfig
@@ -51,7 +51,7 @@ const About = () => {
           <Line className="mx-auto h-full" />
         </motion.div>
         <motion.div
-          className="space-bottom space-y-4 pt-4 text-base !leading-[1.5] sm:pb-56 sm:text-lg"
+          className="space-y-4 pb-40 pt-4 text-base !leading-[1.5] sm:pb-56 sm:text-lg"
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
         >

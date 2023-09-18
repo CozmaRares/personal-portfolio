@@ -12,7 +12,7 @@ import useSectionInView from "@/hooks/useSectionInView";
 import { useActiveSectionContext } from "@/context/active-section";
 
 const Intro = () => {
-  const { ref, inView } = useSectionInView("home", 0.5);
+  const { ref, inView } = useSectionInView("home", 0.7);
   const { setActiveSection } = useActiveSectionContext();
 
   return (

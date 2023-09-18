@@ -1,7 +1,7 @@
 "use client";
 
 import Line from "./Line";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IoCode, IoCodeSlash } from "react-icons/io5";
 import { headingFont } from "@/lib/fonts";
 import { projectData } from "@/lib/data";
@@ -39,10 +39,17 @@ const staggerVariant = {
 const Projects = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { ref } = useSectionInView("projects", 0.2);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const wasOpened = useRef(false);
+
+  useEffect(() => {
+    if (isOpen) wasOpened.current = true;
+    else if (wasOpened.current) buttonRef.current!.scrollIntoView();
+  }, [isOpen]);
 
   return (
     <section
-      ref={ref}
+      ref={isOpen ? ref : undefined}
       className={`${Line.containerClass} gap-x-0`}
     >
       {isOpen && (
@@ -138,16 +145,17 @@ const Projects = () => {
         </>
       )}
       <button
-        onClick={() => setIsOpen(prev => !prev)}
+        ref={buttonRef}
+        onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          `col-span-full mx-auto h-12 w-36 rounded-xl border-2 border-indigo-600 p-3 text-indigo-600
-          outline-none transition-colors
+          `col-span-full mx-auto h-12 w-36 scroll-mt-32 rounded-xl border-2 border-indigo-600 p-3
+          text-indigo-600 outline-none transition-colors
           hover:bg-indigo-600 hover:text-white
           focus:bg-indigo-600 focus:text-white
           dark:border-green-400 dark:text-green-400
           dark:hover:bg-green-400 dark:hover:text-gray-950
           dark:focus:bg-green-400 dark:focus:text-gray-950`,
-          { "col-span-full mt-12": !isOpen },
+          { "mt-12": !isOpen },
         )}
       >
         Show {isOpen ? "less" : "more"}
