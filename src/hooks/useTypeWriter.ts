@@ -2,16 +2,23 @@ import TypeWriter, { Action } from "@/lib/TypeWriter";
 import { useState } from "react";
 import useDeepCompareEffect from "use-deep-compare-effect";
 
-export default function useTypeWriter(
-  actions: Action[],
-  settings: {
+export type TypeWriterParameters = {
+  actions: Action[];
+  settings?: {
     loop?: boolean;
     delay?: number;
     typingSpeed?: number;
     deletingSpeed?: number;
-  } = {},
-) {
-  const [string, setString] = useState("");
+  };
+  initialText?: string;
+};
+
+export default function useTypeWriter({
+  actions,
+  settings = {},
+  initialText,
+}: TypeWriterParameters) {
+  const [string, setString] = useState(initialText);
   const [instance, setInstance] = useState<TypeWriter>();
 
   useDeepCompareEffect(() => {
@@ -21,11 +28,8 @@ export default function useTypeWriter(
       settings,
     );
     setInstance(typeWriter);
-    typeWriter.start();
 
-    return () => {
-      typeWriter.stop();
-    };
+    return () => typeWriter.stop();
   }, [settings, actions]);
 
   return { text: string, typeWriter: instance };

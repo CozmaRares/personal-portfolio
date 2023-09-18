@@ -22,6 +22,7 @@ async function sleep(duration: number) {
 }
 
 export default class TypeWriter {
+  private initialQueue?: Array<() => Promise<void>> = undefined;
   private queue: Array<() => Promise<void>>;
   private loop: boolean;
   private delay: number;
@@ -30,7 +31,6 @@ export default class TypeWriter {
 
   private text = "";
   private stopped = false;
-  private running = false;
 
   constructor(
     actions: Action[],
@@ -103,13 +103,14 @@ export default class TypeWriter {
             });
       }
     });
+
+    if (loop) this.initialQueue = [...this.queue];
   }
 
   async start() {
     if (!this.stopped && this.delay) await sleep(this.delay);
 
     this.stopped = false;
-    this.running = true;
     let cb = this.queue.shift();
     while (cb != null) {
       await cb();
@@ -119,7 +120,11 @@ export default class TypeWriter {
       if (this.loop) this.queue.push(cb);
       cb = this.queue.shift();
     }
-    this.running = false;
+  }
+
+  pause() {
+    this.stopped = true;
+    this.queue = this.initialQueue ? [...this.initialQueue] : [];
   }
 
   stop() {
@@ -128,6 +133,6 @@ export default class TypeWriter {
   }
 
   isRunning() {
-    return this.running;
+    return !this.stopped;
   }
 }

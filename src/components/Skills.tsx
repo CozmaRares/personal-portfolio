@@ -25,7 +25,7 @@ const Skills = () => {
       <h2 className={`${headingFont.className} text-heading pb-8 text-center`}>
         My Skills
       </h2>
-      <ul className="space-bottom mx-auto flex sm:w-5/6 flex-row flex-wrap justify-center gap-4">
+      <ul className="space-bottom mx-auto flex flex-row flex-wrap justify-center gap-4 sm:w-5/6">
         {skills.map((skill, idx) => (
           <motion.li
             key={skill}

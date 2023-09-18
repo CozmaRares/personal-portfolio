@@ -1,22 +1,40 @@
-import useTypeWriter from "@/hooks/useTypeWriter";
+import useTypeWriter, {
+  type TypeWriterParameters,
+} from "@/hooks/useTypeWriter";
 import { cn } from "@/lib/utils";
+import { useEffect } from "react";
 
 type Props = {
-  typeWriter: Parameters<typeof useTypeWriter>;
+  actions: TypeWriterParameters["actions"];
+  settings?: TypeWriterParameters["settings"];
+  initialText?: TypeWriterParameters["initialText"];
   className?: string;
   blinkerClassName?: string;
+  disabled?: boolean;
 };
 
 const TypeWriter = ({
-  typeWriter: typeWrProps,
+  actions,
+  settings,
+  initialText,
   className,
   blinkerClassName,
+  disabled,
 }: Props) => {
-  const { text, typeWriter } = useTypeWriter(...typeWrProps);
+  const { text, typeWriter } = useTypeWriter({
+    actions,
+    settings,
+    initialText,
+  });
+
+  useEffect(() => {
+    if (!disabled) typeWriter?.start();
+    else typeWriter?.pause();
+  }, [disabled, typeWriter, settings?.loop]);
 
   return (
     <span className={cn("inline-block", className)}>
-      <span>{text}</span>
+      <span>{disabled ? initialText : text}</span>
       <span
         aria-hidden
         className={cn(

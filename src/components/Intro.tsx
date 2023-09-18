@@ -12,7 +12,7 @@ import useSectionInView from "@/hooks/useSectionInView";
 import { useActiveSectionContext } from "@/context/active-section";
 
 const Intro = () => {
-  const { ref } = useSectionInView("home", 0.5);
+  const { ref, inView } = useSectionInView("home", 0.5);
   const { setActiveSection } = useActiveSectionContext();
 
   return (
@@ -74,32 +74,32 @@ const Intro = () => {
           <p>
             a{" "}
             <TypeWriter
-              typeWriter={[
-                [
-                  { type: "add", text: "programmer." },
-                  { type: "pause", duration: 1000 },
-                  { type: "clear" },
-                  { type: "pause", duration: 500 },
-                  { type: "add", text: "vim user" },
-                  { type: "pause", duration: 150 },
-                  { type: "clear" },
-                  { type: "pause", duration: 500 },
-                  { type: "add", text: "web developer." },
-                  { type: "pause", duration: 2000 },
-                  { type: "clear" },
-                  { type: "pause", duration: 500 },
-                  { type: "add", text: "full-stack develo" },
-                  { type: "pause", duration: 550 },
-                  { type: "delete", numChars: 3 },
-                  { type: "add", text: "." },
-                  { type: "pause", duration: 5000 },
-                ],
-                {
-                  loop: true,
-                  delay: 300,
-                  typingSpeed: 80,
-                },
+              actions={[
+                { type: "add", text: "programmer." },
+                { type: "pause", duration: 1000 },
+                { type: "clear" },
+                { type: "pause", duration: 500 },
+                { type: "add", text: "vim user" },
+                { type: "pause", duration: 150 },
+                { type: "clear" },
+                { type: "pause", duration: 500 },
+                { type: "add", text: "web developer." },
+                { type: "pause", duration: 2000 },
+                { type: "clear" },
+                { type: "pause", duration: 500 },
+                { type: "add", text: "full-stack develo" },
+                { type: "pause", duration: 550 },
+                { type: "delete", numChars: 3 },
+                { type: "add", text: "." },
+                { type: "pause", duration: 5000 },
               ]}
+              settings={{
+                loop: true,
+                delay: 300,
+                typingSpeed: 80,
+              }}
+              initialText="full-stack dev."
+              disabled={!inView}
             />
           </p>
         </h1>
