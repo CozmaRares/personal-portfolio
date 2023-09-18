@@ -25,8 +25,8 @@ const Home = () => (
       <About />
       <FeaturedProjects />
       <Projects />
-      <div className="space-bottom"/>
-      <Skills/>
+      <div className="space-bottom" />
+      <Skills />
     </main>
   </>
 );

@@ -159,7 +159,7 @@ export const projectData = Object.freeze({
   other: ProjectType[];
 }>);
 
-export const skills = [
+export const skills = Object.freeze([
   "HTML",
   "CSS",
   "JavaScript",
@@ -179,5 +179,5 @@ export const skills = [
   "Java",
   "JUnit",
   "SurrealDB",
-  "Basic AWS"
-] as const;
+  "Basic AWS",
+] as const);

@@ -40,6 +40,7 @@ const About = () => {
           <span className="mx-4 h-[1px] max-w-xs grow bg-indigo-400 dark:bg-green-300 xs:mr-10" />
         </motion.h2>
         <motion.div
+          className="origin-top"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{
@@ -47,7 +48,7 @@ const About = () => {
             delay: 0.6,
           }}
         >
-          <Line className="mx-auto h-full origin-top" />
+          <Line className="mx-auto h-full" />
         </motion.div>
         <motion.div
           className="space-bottom space-y-4 pt-4 text-base !leading-[1.5] sm:pb-56 sm:text-lg"
