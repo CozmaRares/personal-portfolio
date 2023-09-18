@@ -39,15 +39,16 @@ const About = () => {
           </span>
           <span className="mx-4 h-[1px] max-w-xs grow bg-indigo-400 dark:bg-green-300 xs:mr-10" />
         </motion.h2>
-        <Line.motion
-          className="mx-auto origin-top"
+        <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{
             type: "tween",
             delay: 0.6,
           }}
-        />
+        >
+          <Line className="mx-auto h-full origin-top" />
+        </motion.div>
         <motion.div
           className="space-bottom space-y-4 pt-4 text-base !leading-[1.5] sm:pb-56 sm:text-lg"
           initial={{ y: 100, opacity: 0 }}

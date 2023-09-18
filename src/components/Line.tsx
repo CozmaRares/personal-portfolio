@@ -1,21 +1,17 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { type MotionProps, motion } from "framer-motion";
 
 type Props = {
   className?: string;
 };
 
-const setClass = (className = "") =>
-  cn("w-[3px] bg-gradient-to-b from-indigo-400 dark:from-green-500", className);
-
-const Line = ({ className }: Props) => <div className={setClass(className)} />;
-
-Line.motion = (props: MotionProps & { className?: string }) => (
-  <motion.div
-    {...props}
-    className={setClass(props.className)}
+const Line = ({ className }: Props) => (
+  <div
+    className={cn(
+      "w-[3px] bg-gradient-to-b from-indigo-400 dark:from-green-500",
+      className,
+    )}
   />
 );
 
