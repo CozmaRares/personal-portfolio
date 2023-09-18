@@ -38,7 +38,7 @@ const staggerVariant = {
 
 const Projects = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { ref } = useSectionInView("projects", 0.3);
+  const { ref } = useSectionInView("projects", 0.2);
 
   return (
     <section
@@ -106,8 +106,8 @@ const Projects = () => {
               delay: computeDelay(TRANSITION_ORDER.second_line),
             }}
           >
-            <Line className="mx-auto h-1/2 dark:to-green-800" />
-            <Line className="mx-auto h-1/2 bg-gradient-to-t dark:to-green-800" />
+            <Line className="mx-auto h-1/2 to-indigo-200 dark:to-green-800" />
+            <Line className="mx-auto h-1/2 bg-gradient-to-t to-indigo-200 dark:to-green-800" />
           </motion.div>
           <ul className="grid-like-flex py-12 pr-3 [--gap:1rem] sm:[--cols:2] lg:[--cols:3]">
             {projectData.other.map((data, idx) => (
@@ -140,9 +140,13 @@ const Projects = () => {
       <button
         onClick={() => setIsOpen(prev => !prev)}
         className={cn(
-          `col-span-full mx-auto h-12 w-36 rounded-xl border-2 border-indigo-600 p-3 text-indigo-600 transition-[background-color]
-          hover:bg-indigo-300/20 dark:border-green-400
-          dark:text-green-400 dark:hover:bg-green-700/20`,
+          `col-span-full mx-auto h-12 w-36 rounded-xl border-2 border-indigo-600 p-3 text-indigo-600
+          outline-none transition-colors
+          hover:bg-indigo-600 hover:text-white
+          focus:bg-indigo-600 focus:text-white
+          dark:border-green-400 dark:text-green-400
+          dark:hover:bg-green-400 dark:hover:text-gray-950
+          dark:focus:bg-green-400 dark:focus:text-gray-950`,
           { "col-span-full mt-12": !isOpen },
         )}
       >

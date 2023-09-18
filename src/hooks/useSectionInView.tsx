@@ -11,10 +11,7 @@ export default function useSectionInView(
   const { setActiveSection, enableObserver } = useActiveSectionContext();
 
   useEffect(() => {
-    if (inView && enableObserver()) {
-      setActiveSection(sectionName);
-      console.log(sectionName, "visible");
-    }
+    if (inView && enableObserver()) setActiveSection(sectionName);
   }, [inView, setActiveSection, enableObserver, sectionName]);
 
   return { ref, inView };

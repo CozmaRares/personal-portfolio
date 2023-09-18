@@ -10,7 +10,8 @@ const Header = () => {
 
   return (
     <motion.header
-      className="fixed left-1/2 top-0 z-50 w-full min-w-[20rem] bg-white/30 p-4 capitalize backdrop-blur neon-indigo-lg [translate:-50%]
+      className="fixed left-1/2 top-0 z-50 w-full min-w-[20rem] bg-white/40 p-5 capitalize backdrop-blur
+      neon-indigo-lg [translate:-50%]
       dark:bg-gray-950/30 dark:neon-green-lg
       sm:top-5 sm:w-[39rem] sm:rounded-full"
       initial={{ y: -100, opacity: 0 }}

@@ -110,7 +110,8 @@ const Intro = () => {
         >
           <Link
             href="#contact"
-            className="group flex w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full bg-gray-950/80 px-7 py-3 text-white neon-indigo
+            className="group flex w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full
+            bg-gray-950/80 px-7 py-3 text-white outline-none neon-indigo
             hover:scale-110 focus:scale-110 active:scale-105
             motion-safe:transition-transform
             dark:bg-slate-300/80 dark:text-black dark:neon-green sm:w-fit"
@@ -124,14 +125,15 @@ const Intro = () => {
           <a
             href="/CV.pdf"
             download
-            className="border-card group flex w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white/40 px-7 py-3
+            className="border-card group flex w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full
+            bg-white/40 px-7 py-3 outline-none
             hover:scale-110 focus:scale-110 active:scale-105
             motion-safe:transition-transform
             dark:bg-gray-900/40
             sm:w-fit"
           >
             Download CV{" "}
-            <span className="delay-150 group-hover:translate-y-[2px] motion-safe:transition-transform sm:hidden md:inline">
+            <span className="opacity-70 delay-150 group-hover:translate-y-[2px] motion-safe:transition-transform sm:hidden md:inline">
               <BsDownload />
             </span>
           </a>
@@ -139,13 +141,16 @@ const Intro = () => {
             href="https://github.com/CozmaRares/"
             target="_blank"
             aria-label="Github"
-            className="border-card group flex h-full w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white/50 px-7 py-3
+            className="border-card group flex h-full w-full flex-row items-center justify-center gap-2 whitespace-nowrap
+            rounded-full bg-white/50 px-7 py-3 outline-none
             hover:scale-110 focus:scale-110 active:scale-105
             motion-safe:transition-transform
             dark:bg-gray-900/50 sm:w-fit"
           >
             <span className="sm:hidden">My Github</span>
-            <FaGithubAlt />
+            <span className="opacity-70 sm:opacity-100">
+              <FaGithubAlt />
+            </span>
           </a>
         </div>
       </motion.div>

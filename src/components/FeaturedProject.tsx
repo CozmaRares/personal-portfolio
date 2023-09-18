@@ -50,8 +50,8 @@ const FeaturedProject = ({
         <Image
           src={image}
           alt={`${title} preview`}
-          className={cn("aspect-video object-cover", {
-            "transition-transform duration-500 motion-safe:hover:scale-110":
+          className={cn("pointer-events-none aspect-video object-cover", {
+            "duration-500 group-hover:scale-110 group-focus:scale-110 motion-safe:transition-transform":
               !!demoLink,
           })}
         />

@@ -22,10 +22,11 @@ const Skills = () => {
       ref={ref}
       id="skills"
     >
+      <div className="mx-auto my-24 h-28 w-1 rounded-full bg-indigo-800 neon-indigo dark:bg-green-300 dark:neon-green" />
       <h2 className={`${headingFont.className} text-heading pb-8 text-center`}>
         My Skills
       </h2>
-      <ul className="space-bottom mx-auto flex flex-row flex-wrap justify-center gap-4 sm:w-5/6">
+      <ul className="mx-auto flex flex-row flex-wrap justify-center gap-4 sm:w-5/6">
         {skills.map((skill, idx) => (
           <motion.li
             key={skill}
@@ -40,6 +41,7 @@ const Skills = () => {
           </motion.li>
         ))}
       </ul>
+      <div className="mx-auto my-24 h-28 w-1 rounded-full bg-indigo-800 neon-indigo dark:bg-green-300 dark:neon-green" />
     </section>
   );
 };
