@@ -146,7 +146,10 @@ const Projects = () => {
       )}
       <button
         ref={buttonRef}
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => {
+          buttonRef.current!.blur();
+          setIsOpen(!isOpen);
+        }}
         className={cn(
           `col-span-full mx-auto h-12 w-36 scroll-mt-32 rounded-xl border-2 border-indigo-600 p-3
           text-indigo-600 outline-none transition-colors
