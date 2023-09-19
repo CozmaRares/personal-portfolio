@@ -57,7 +57,7 @@ const About = () => {
         >
           <p>
             My journey began back in high school, where I developed a
-            fascination for C++ and honed my skills by creating small CLI
+            fascination for C++ and improved my skills by creating small CLI
             programs and games.
           </p>
           <p>

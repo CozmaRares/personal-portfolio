@@ -34,7 +34,7 @@ const TypeWriter = ({
 
   return (
     <span className={cn("inline-block", className)}>
-      <span>{disabled ? initialText : text}</span>
+      <span>{text}</span>
       <span
         aria-hidden
         className={cn(

@@ -61,10 +61,10 @@ const Intro = () => {
           <p>
             I&apos;m{" "}
             <span
-              className="pr-[var(--shadow-off)] font-normal sm:text-indigo-500
-              sm:[--shadow-col:#71717a] sm:[--shadow-off:5px]
+              className="pr-[var(--shadow-off)] font-normal
+              sm:[--shadow-col:#6366f1] sm:[--shadow-off:5px]
+              sm:dark:[--shadow-col:#16a34a]
               sm:[text-shadow:var(--shadow-off)_0px_var(--shadow-col)]
-              sm:dark:text-green-600 sm:dark:[--shadow-col:#94a3b8]
               md:[--shadow-off:7px]"
             >
               R
