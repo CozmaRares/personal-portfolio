@@ -10,27 +10,21 @@ export type Action =
   | {
       type: "delete";
       numChars: number;
-    }
-  | {
-      type: "clear";
     };
 
-async function sleep(duration: number) {
-  return new Promise<void>(resolve => {
-    setTimeout(resolve, duration);
-  });
-}
-
 export default class TypeWriter {
-  private initialQueue?: Array<() => Promise<void>> = undefined;
-  private queue: Array<() => Promise<void>>;
+  private queue: Array<Action>;
   private loop: boolean;
-  private delay: number;
   private typingSpeed: number;
   private deletingSpeed: number;
+  private setTextCallback: (text: string) => void;
 
   private text = "";
+  private delay: number = 0;
   private stopped = false;
+  private lastFrameTime: ReturnType<typeof Date.now> | null = null;
+  private animationFrame: ReturnType<typeof requestAnimationFrame> | null =
+    null;
 
   constructor(
     actions: Action[],
@@ -38,101 +32,78 @@ export default class TypeWriter {
     { loop = false, delay = 0, typingSpeed = 50, deletingSpeed = 50 } = {},
   ) {
     this.loop = loop;
-    this.delay = delay;
     this.typingSpeed = typingSpeed;
+    this.delay = delay;
     this.deletingSpeed = deletingSpeed;
+    this.setTextCallback = setTextCallback;
 
-    if (loop) actions.push({ type: "clear" });
-
-    this.queue = actions.map(action => {
+    this.queue = actions.flatMap(action => {
       switch (action.type) {
         case "add":
-          return () =>
-            new Promise((resolve, reject) => {
-              let i = 0;
-              const interval = setInterval(() => {
-                if (this.stopped) {
-                  clearInterval(interval);
-                  reject();
-                }
-
-                this.text += action.text[i];
-                setTextCallback(this.text);
-                i++;
-                if (i >= action.text.length) {
-                  clearInterval(interval);
-                  resolve();
-                }
-              }, this.typingSpeed);
-            });
+          return action.text
+            .split("")
+            .map(char => ({ type: "add", text: char }));
         case "pause":
-          return () => sleep(action.duration);
+          return action;
         case "delete":
-          return () =>
-            new Promise((resolve, reject) => {
-              let i = 0;
-              const interval = setInterval(() => {
-                if (this.stopped) {
-                  clearInterval(interval);
-                  reject();
-                }
-                this.text = this.text.substring(0, this.text.length - 1);
-                setTextCallback(this.text);
-                i++;
-                if (i >= action.numChars) {
-                  clearInterval(interval);
-                  resolve();
-                }
-              }, this.deletingSpeed);
-            });
-        case "clear":
-          return () =>
-            new Promise((resolve, reject) => {
-              const interval = setInterval(() => {
-                if (this.stopped) {
-                  clearInterval(interval);
-                  reject();
-                }
-                this.text = this.text.substring(0, this.text.length - 1);
-                setTextCallback(this.text);
-                if (this.text.length == 0) {
-                  clearInterval(interval);
-                  resolve();
-                }
-              }, this.deletingSpeed);
-            });
+          return new Array<Action>(action.numChars).fill({
+            type: "delete",
+            numChars: 1,
+          });
       }
     });
-
-    if (loop) this.initialQueue = [...this.queue];
   }
 
-  async start() {
-    if (!this.stopped && this.delay) await sleep(this.delay);
-
+  start() {
     this.stopped = false;
-    let cb = this.queue.shift();
-    while (cb != null) {
-      await cb();
-
-      if (this.stopped) break;
-
-      if (this.loop) this.queue.push(cb);
-      cb = this.queue.shift();
-    }
-  }
-
-  pause() {
-    this.stopped = true;
-    this.queue = this.initialQueue ? [...this.initialQueue] : [];
+    this.runEventLoop();
   }
 
   stop() {
     this.stopped = true;
-    this.queue = [];
+    if (this.animationFrame) {
+      cancelAnimationFrame(this.animationFrame);
+      this.animationFrame = null;
+    }
   }
 
   isRunning() {
     return !this.stopped;
+  }
+
+  private runEventLoop() {
+    if (this.lastFrameTime == null) this.lastFrameTime = Date.now();
+
+    const now = Date.now();
+    const delta = now - this.lastFrameTime;
+
+    if (this.stopped || this.queue.length == 0) return;
+
+    this.animationFrame = requestAnimationFrame(() => this.runEventLoop());
+
+    if (delta < this.delay) return;
+
+    const action = this.queue.shift()!;
+
+    switch (action.type) {
+      case "add":
+        this.text += action.text;
+        this.delay = this.typingSpeed;
+        break;
+      case "pause":
+        this.delay = action.duration;
+        break;
+      case "delete":
+        this.text = this.text.substring(0, this.text.length - action.numChars);
+        this.delay = this.deletingSpeed;
+        break;
+      default:
+        break;
+    }
+
+    if (this.loop) this.queue.push(action);
+
+    this.setTextCallback(this.text);
+    this.lastFrameTime = now;
   }
 }

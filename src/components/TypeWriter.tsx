@@ -29,7 +29,7 @@ const TypeWriter = ({
 
   useEffect(() => {
     if (!disabled) typeWriter?.start();
-    else typeWriter?.pause();
+    else typeWriter?.stop();
   }, [disabled, typeWriter, settings?.loop]);
 
   return (
