@@ -96,7 +96,7 @@ const Intro = () => {
               ]}
               settings={{
                 loop: true,
-                delay: 300,
+                delay: 500,
                 typingSpeed: 80,
               }}
               initialText="full-stack dev."

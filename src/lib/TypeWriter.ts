@@ -55,6 +55,7 @@ export default class TypeWriter {
   }
 
   start() {
+    this.setTextCallback(this.text);
     this.stopped = false;
     this.runEventLoop();
   }
