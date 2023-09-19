@@ -30,6 +30,17 @@ const FeaturedProject = ({
   const transform = useMotionTemplate`translateX(calc(var(--direction, 1) * 500px * (1 - ${scrollYProgress})))`;
   const opacity = useTransform(() => 0.5 + scrollYProgress.get() ** 4 / 2);
 
+  const img = (
+    <Image
+      src={image}
+      alt={`${title} preview`}
+      className={cn("pointer-events-none aspect-video object-cover", {
+        "duration-500 group-hover:scale-110 group-focus:scale-110 motion-safe:transition-transform":
+          !!demoLink,
+      })}
+    />
+  );
+
   return (
     <motion.article
       ref={ref}
@@ -41,20 +52,17 @@ const FeaturedProject = ({
       lg:group-odd:text-right lg:group-odd:[--direction:1]
       lg:group-even:flex-row-reverse lg:group-even:[--direction:-1]"
     >
-      <a
-        href={demoLink}
-        target="_blank"
-        className="border-card group overflow-hidden rounded-lg lg:w-1/2"
-      >
-        <Image
-          src={image}
-          alt={`${title} preview`}
-          className={cn("pointer-events-none aspect-video object-cover", {
-            "duration-500 group-hover:scale-110 group-focus:scale-110 motion-safe:transition-transform":
-              !!demoLink,
-          })}
-        />
-      </a>
+      {demoLink ? (
+        <a
+          href={demoLink}
+          target="_blank"
+          className="border-card group overflow-hidden rounded-lg lg:w-1/2"
+        >
+          {img}
+        </a>
+      ) : (
+        img
+      )}
       <div className="flex w-full flex-grow flex-col justify-between gap-6 lg:w-1/2 lg:items-end lg:group-even:items-start">
         <h3 className={`${headingFont.className} text-heading font-medium`}>
           {title}

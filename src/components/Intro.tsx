@@ -141,7 +141,7 @@ const Intro = () => {
           <a
             href="https://github.com/CozmaRares/"
             target="_blank"
-            aria-label="Github"
+            aria-label="My Github"
             className="border-card group flex h-full w-full flex-row items-center justify-center gap-2 whitespace-nowrap
             rounded-full bg-white/50 px-7 py-3 outline-none
             hover:scale-110 focus:scale-110 active:scale-105
