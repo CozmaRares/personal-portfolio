@@ -27,15 +27,6 @@ const computeDelay = (order: number, extraDelay?: number) => {
   return transitionDuration * (order - 1) + extraDelay;
 };
 
-const staggerVariant = {
-  initial: { x: -100, opacity: 0 },
-  animate: (idx: number) => ({
-    x: 0,
-    opacity: 1,
-    transition: { delay: computeDelay(TRANSITION_ORDER.list, idx * 0.1) },
-  }),
-};
-
 const Projects = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { ref } = useSectionInView("projects", 0.2);
@@ -120,10 +111,14 @@ const Projects = () => {
             {projectData.other.map((data, idx) => (
               <motion.li
                 key={`project-other-${data.title}`}
-                variants={staggerVariant}
-                initial="initial"
-                animate="animate"
-                custom={idx}
+                initial={{ x: -100, opacity: 0 }}
+                animate={{
+                  x: 0,
+                  opacity: 1,
+                  transition: {
+                    delay: computeDelay(TRANSITION_ORDER.list, idx * 0.1),
+                  },
+                }}
               >
                 <Project {...data} />
               </motion.li>

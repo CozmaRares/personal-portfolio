@@ -5,15 +5,6 @@ import { skills } from "@/lib/data";
 import { headingFont } from "@/lib/fonts";
 import { motion } from "framer-motion";
 
-const staggerVariant = {
-  initial: { y: 100, opacity: 0 },
-  animate: (idx: number) => ({
-    y: 0,
-    opacity: 1,
-    transition: { delay: idx * 0.05 },
-  }),
-};
-
 const Skills = () => {
   const { ref } = useSectionInView("skills");
 
@@ -31,11 +22,13 @@ const Skills = () => {
           <motion.li
             key={skill}
             className="card bg-card px-5 py-3"
-            variants={staggerVariant}
-            initial="initial"
-            whileInView="animate"
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
+              transition: { delay: idx * 0.05 },
+            }}
             viewport={{ once: true }}
-            custom={idx}
           >
             {skill}
           </motion.li>

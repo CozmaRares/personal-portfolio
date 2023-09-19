@@ -10,6 +10,13 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       keyframes: {
         blink: {
@@ -26,6 +33,7 @@ const config: Config = {
     },
   },
   plugins: [
+    require("tailwindcss-animate"),
     plugin(({ theme, addUtilities }) => {
       const neon: CSSRuleObject = {};
       const sizes: {

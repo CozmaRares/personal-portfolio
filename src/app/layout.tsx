@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import MotionConfigWrapper from "@/components/MotionConfigWrapper";
 import ActiveSectionContextProvider from "@/context/active-section";
 import { defaultFont } from "@/lib/fonts";
+import { Toaster } from "@/components/shadcn/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Rares | Portfolio",
@@ -27,6 +28,7 @@ const RootLayout = ({ children }: Props) => (
           {children}
         </ActiveSectionContextProvider>
         <ThemeSwitch />
+        <Toaster className="!top-0" />
       </MotionConfigWrapper>
     </body>
   </html>

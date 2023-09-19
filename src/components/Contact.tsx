@@ -1,12 +1,15 @@
 "use client";
 
+import sendEmail from "@/actions/sendEmail";
 import useSectionInView from "@/hooks/useSectionInView";
 import { headingFont } from "@/lib/fonts";
 import { motion } from "framer-motion";
 import { FaPaperPlane } from "react-icons/fa6";
+import { useToast } from "@/components/shadcn/ui/use-toast";
 
 const Contact = () => {
   const { ref } = useSectionInView("contact", 0.6);
+  const { toast } = useToast();
 
   return (
     <motion.section
@@ -24,7 +27,43 @@ const Contact = () => {
         <a href="mailto:cozmarares11@gmail.com">cozmarares11@gmail.com</a> or
         through this form.
       </p>
-      <form className="flex flex-col gap-8 pt-12">
+      <form
+        className="flex flex-col gap-8 pt-12"
+        action={async formData => {
+          const result = await sendEmail(formData);
+
+          console.log(result);
+
+          if (!result.error)
+            return toast({ description: "Email sent successfully!" });
+
+          switch (result.error) {
+            case "resend":
+              toast({ description: result.message });
+              break;
+            case "zod":
+              if (result.email)
+                toast({
+                  title: "Email",
+                  description: result.email,
+                  variant: "destructive",
+                });
+              if (result.message)
+                toast({
+                  title: "Message",
+                  description: result.message,
+                  variant: "destructive",
+                });
+              break;
+            default:
+              toast({
+                description: "Something went wrong. Please try again",
+                variant: "destructive",
+              });
+              break;
+          }
+        }}
+      >
         <label
           htmlFor="email"
           className="sr-only"
@@ -32,6 +71,7 @@ const Contact = () => {
           Enter your email
         </label>
         <input
+          required
           id="email"
           name="email"
           type="email"
@@ -39,6 +79,7 @@ const Contact = () => {
           className="border-card h-12 rounded-lg p-4 placeholder-gray-600 dark:bg-gray-800 dark:placeholder-gray-400"
         />
         <textarea
+          required
           id="message"
           name="message"
           placeholder="Your message"
