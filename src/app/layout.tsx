@@ -52,15 +52,6 @@ export const metadata: Metadata = {
   category: "web development",
 };
 
-const data = {
-  "@context": "http://schema.org",
-  "@type": "Website",
-  name: title,
-  url,
-  logo: `${url}/favicon.ico`,
-  description,
-};
-
 type Props = { children: React.ReactNode };
 
 const RootLayout = ({ children }: Props) => (
@@ -80,11 +71,6 @@ const RootLayout = ({ children }: Props) => (
         <ThemeSwitch />
         <Toaster className="!top-0" />
       </MotionConfigWrapper>
-      <script
-        key="structured-data"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-      />
     </body>
   </html>
 );
