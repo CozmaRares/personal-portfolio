@@ -2,8 +2,6 @@
 
 import type { FeaturedProjectType } from "@/lib/data";
 import Image from "next/image";
-import { PiGithubLogoBold } from "react-icons/pi";
-import { HiExternalLink } from "react-icons/hi";
 import { cn } from "@/lib/utils";
 import {
   motion,
@@ -14,6 +12,7 @@ import {
 import { useRef } from "react";
 import { headingFont } from "@/lib/fonts";
 import TagList from "./TagList";
+import { ExternalLink, Github } from "lucide-react";
 
 const FeaturedProject = ({
   title,
@@ -80,7 +79,7 @@ const FeaturedProject = ({
             aria-label="link to code"
             className="flex flex-row items-center gap-1 transition-colors hover:text-indigo-600 dark:hover:text-green-500"
           >
-            Code <PiGithubLogoBold />
+            Code <Github />
           </a>
           {demoLink && (
             <a
@@ -89,8 +88,7 @@ const FeaturedProject = ({
               aria-label="link to demo"
               className="flex flex-row items-center gap-1 transition-colors hover:text-indigo-600 dark:hover:text-green-500"
             >
-              Demo
-              <HiExternalLink />
+              Demo <ExternalLink />
             </a>
           )}
         </div>

@@ -4,8 +4,8 @@ import sendEmail from "@/actions/sendEmail";
 import useSectionInView from "@/hooks/useSectionInView";
 import { headingFont } from "@/lib/fonts";
 import { motion } from "framer-motion";
-import { FaPaperPlane } from "react-icons/fa6";
 import { useToast } from "@/components/shadcn/ui/use-toast";
+import { Send } from "lucide-react";
 
 const Contact = () => {
   const { ref } = useSectionInView("contact", 0.6);
@@ -95,7 +95,7 @@ const Contact = () => {
         >
           Submit
           <span className="opacity-70 delay-150 group-hover:-translate-y-1 group-hover:translate-x-1 motion-safe:transition-transform">
-            <FaPaperPlane />
+            <Send />
           </span>
         </button>
       </form>

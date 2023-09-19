@@ -4,9 +4,7 @@ import chessImg from "@/../public/projects/chess.png";
 import serverImg from "@/../public/projects/c-server.png";
 import type { StaticImageData } from "next/image";
 import type { Prettify } from "./types";
-import { FaServer } from "react-icons/fa6";
-import { MdOutlineWebAsset } from "react-icons/md";
-import type { IconType } from "react-icons";
+import { Layout, LucideIcon, Server } from "lucide-react";
 
 export const sections = Object.freeze([
   "home",
@@ -23,7 +21,7 @@ export type ProjectType = {
   description: string;
   tags: Array<string | { text: string; link: string }>;
   githubLink: string;
-  icon: IconType;
+  icon: LucideIcon;
 };
 
 export type FeaturedProjectType = Prettify<
@@ -91,7 +89,7 @@ export const projectData = Object.freeze({
         { text: "TOP", link: "https://www.theodinproject.com/" },
       ],
       githubLink: "https://github.com/CozmaRares/odin-project-tic-tac-toe",
-      icon: MdOutlineWebAsset,
+      icon: Layout,
     },
     {
       title: "Polynomial Calculator",
@@ -99,7 +97,7 @@ export const projectData = Object.freeze({
         "Polynomial calculator with a dedicated graphical interface through which the user can insert polynomials, select the mathematical operation to be performed and view the result.",
       tags: ["Java", "JUnit", "Maven"],
       githubLink: "https://github.com/CozmaRares",
-      icon: FaServer,
+      icon: Server,
     },
     {
       title: "Queue Management",
@@ -107,7 +105,7 @@ export const projectData = Object.freeze({
         "An application that simulates queuing-based systems. It involves clients arriving, joining queues, waiting, getting served, and leaving. The application calculates key metrics such as average waiting time, average service time, and peak hour.",
       tags: ["Java", "Maven"],
       githubLink: "https://github.com/CozmaRares",
-      icon: FaServer,
+      icon: Server,
     },
     {
       title: "Orders Management",
@@ -119,7 +117,7 @@ export const projectData = Object.freeze({
         { text: "SurrealDB", link: "https://surrealdb.com/" },
       ],
       githubLink: "https://github.com/CozmaRares",
-      icon: FaServer,
+      icon: Server,
     },
     {
       title: "File System Traversal",
@@ -127,7 +125,7 @@ export const projectData = Object.freeze({
         "A simple CLI program, developed for a college assignment, that employs Linux system calls to parse a custom binary file format and filter directory contents.",
       tags: ["C", "Linux", "Makefile"],
       githubLink: "https://github.com/CozmaRares",
-      icon: FaServer,
+      icon: Server,
     },
     {
       title: "Process & Thread Management",
@@ -135,7 +133,7 @@ export const projectData = Object.freeze({
         "A college homework project focusing on process and thread management, replicating a specified process hierarchy, and implementing thread synchronization.",
       tags: ["C", "Linux", "Makefile"],
       githubLink: "https://github.com/CozmaRares",
-      icon: FaServer,
+      icon: Server,
     },
     {
       title: "Inter-process Communication",
@@ -143,7 +141,7 @@ export const projectData = Object.freeze({
         "A college homework project involving inter-process communication, where the program receives instructions from a tester script, executes them, and exchanges data via pipes.",
       tags: ["C", "Linux", "Makefile"],
       githubLink: "https://github.com/CozmaRares",
-      icon: FaServer,
+      icon: Server,
     },
     {
       title: "Pseudocode Interpreter",
@@ -151,7 +149,7 @@ export const projectData = Object.freeze({
         "An interpreter for a dynamic programming language based on pseudocode, featuring customizable error messages, function names, variables, keywords, and primitive types.",
       tags: ["C++", "Makefile"],
       githubLink: "https://github.com/CozmaRares/psc-interpreter",
-      icon: FaServer,
+      icon: Server,
     },
   ],
 } satisfies Readonly<{

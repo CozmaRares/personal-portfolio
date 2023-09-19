@@ -1,10 +1,10 @@
 "use client";
 
-import { FaQuestion } from "react-icons/fa";
 import { motion, MotionConfig } from "framer-motion";
 import Line from "./Line";
 import { headingFont } from "@/lib/fonts";
 import useSectionInView from "@/hooks/useSectionInView";
+import { HelpCircle } from "lucide-react";
 
 const About = () => {
   const { ref } = useSectionInView("about");
@@ -25,7 +25,7 @@ const About = () => {
           animate={{ opacity: 1 }}
         >
           <Line.breakPoint>
-            <FaQuestion />
+            <HelpCircle />
           </Line.breakPoint>
         </motion.div>
         <motion.h2

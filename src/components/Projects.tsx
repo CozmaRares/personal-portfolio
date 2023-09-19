@@ -2,13 +2,13 @@
 
 import Line from "./Line";
 import { useEffect, useRef, useState } from "react";
-import { IoCode, IoCodeSlash } from "react-icons/io5";
 import { headingFont } from "@/lib/fonts";
 import { projectData } from "@/lib/data";
 import Project from "./Project";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import useSectionInView from "@/hooks/useSectionInView";
+import { Code, Code2 } from "lucide-react";
 
 const TRANSITION_ORDER = Object.freeze({
   first_line: 1,
@@ -67,7 +67,7 @@ const Projects = () => {
             }}
           >
             <Line.breakPoint>
-              <IoCode />
+              <Code />
             </Line.breakPoint>
           </motion.div>
           <motion.h2
@@ -134,7 +134,7 @@ const Projects = () => {
             }}
           >
             <Line.breakPoint>
-              <IoCodeSlash />
+              <Code2 />
             </Line.breakPoint>
           </motion.div>
         </>

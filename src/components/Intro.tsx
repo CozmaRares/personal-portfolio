@@ -4,12 +4,12 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import TypeWriter from "./TypeWriter";
 import Link from "next/link";
-import { BsDownload } from "react-icons/bs";
-import { FaArrowRightLong, FaGithubAlt } from "react-icons/fa6";
 import Line from "./Line";
 import { headingFont } from "@/lib/fonts";
 import useSectionInView from "@/hooks/useSectionInView";
 import { useActiveSectionContext } from "@/context/active-section";
+import { ArrowRight, Download } from "lucide-react";
+import GithubAlt from "./GithubAlt";
 
 const Intro = () => {
   const { ref, inView } = useSectionInView("home", 0.7);
@@ -120,7 +120,7 @@ const Intro = () => {
           >
             Contact me{" "}
             <span className="opacity-70 delay-150 group-hover:translate-x-[2px] motion-safe:transition-transform sm:hidden md:inline">
-              <FaArrowRightLong />
+              <ArrowRight />
             </span>
           </Link>
           <a
@@ -135,7 +135,7 @@ const Intro = () => {
           >
             Download CV{" "}
             <span className="opacity-70 delay-150 group-hover:translate-y-[2px] motion-safe:transition-transform sm:hidden md:inline">
-              <BsDownload />
+              <Download />
             </span>
           </a>
           <a
@@ -150,7 +150,7 @@ const Intro = () => {
           >
             <span className="sm:hidden">My Github</span>
             <span className="opacity-70 sm:opacity-100">
-              <FaGithubAlt />
+              <GithubAlt />
             </span>
           </a>
         </div>

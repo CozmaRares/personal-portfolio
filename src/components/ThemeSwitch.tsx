@@ -1,8 +1,8 @@
 "use client";
 
-import { FaSun, FaMoon } from "react-icons/fa6";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Moon, Sun } from "lucide-react";
 
 type Theme = "light" | "dark";
 
@@ -47,7 +47,7 @@ const ThemeSwitch = () => {
         exit={{ opacity: 0 }}
         aria-label="toggle color theme"
       >
-        {theme == "light" ? <FaSun /> : <FaMoon />}
+        {theme == "light" ? <Sun /> : <Moon />}
       </motion.button>
     </AnimatePresence>
   );

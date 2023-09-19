@@ -1,7 +1,7 @@
 import { detailFont } from "@/lib/fonts";
 import type { ProjectType } from "@/lib/data";
-import { HiExternalLink } from "react-icons/hi";
 import { cn } from "@/lib/utils";
+import { ExternalLink } from "lucide-react";
 
 type Props = {
   keyPrefix: string;
@@ -25,11 +25,10 @@ const TagList = ({ keyPrefix, tags, className }: Props) => (
           <a
             href={tag.link}
             target="_blank"
-            className="inline-flex flex-row gap-1 hover:underline"
+            className="flex flex-row items-center gap-1 hover:underline"
           >
             {tag.text}
-
-            <HiExternalLink />
+            <ExternalLink />
           </a>
         )}
       </li>

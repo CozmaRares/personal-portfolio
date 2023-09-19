@@ -43,7 +43,7 @@ export default async function sendEmail(formData: FormData): Promise<
       to: "cozmarares11@gmail.com",
       subject: "Message from contact form",
       reply_to: email!,
-      react: createElement(ContactEmail, {message:message!}),
+      react: createElement(ContactEmail, { message: message! }),
     });
     return { error: null };
   } catch (error) {
