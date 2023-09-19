@@ -15,6 +15,7 @@ const description =
 const url = "https://raru.dev";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(url),
   title,
   description,
   applicationName: name,

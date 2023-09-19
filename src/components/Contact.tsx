@@ -76,14 +76,14 @@ const Contact = () => {
           name="email"
           type="email"
           placeholder="Your email"
-          className="border-card h-12 rounded-lg p-4 placeholder-gray-600 dark:bg-gray-800 dark:placeholder-gray-400"
+          className="border-card h-12 rounded-lg bg-white p-4 placeholder-gray-600 dark:bg-gray-800 dark:placeholder-gray-400"
         />
         <textarea
           required
           id="message"
           name="message"
           placeholder="Your message"
-          className="border-card h-52 rounded-lg p-4 placeholder-gray-600 dark:bg-gray-800 dark:placeholder-gray-400"
+          className="border-card h-52 rounded-lg bg-white p-4 placeholder-gray-600 dark:bg-gray-800 dark:placeholder-gray-400"
         />
         <button
           type="submit"
