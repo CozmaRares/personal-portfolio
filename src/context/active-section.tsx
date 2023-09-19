@@ -5,7 +5,7 @@ import { useState, createContext, useContext } from "react";
 
 export const ActiveSectionContext = createContext<{
   activeSection: SectionName;
-  setActiveSection: (section: SectionName) => void;
+  setActiveSection: (section: SectionName, setTime?: boolean) => void;
   enableObserver: () => boolean;
 } | null>(null);
 
@@ -19,9 +19,9 @@ const ActiveSectionContextProvider = ({ children }: Props) => {
     <ActiveSectionContext.Provider
       value={{
         activeSection,
-        setActiveSection: section => {
+        setActiveSection: (section, setTime = true) => {
           setActiveSection(section);
-          setTimeOfLastClick(Date.now());
+          if (setTime) setTimeOfLastClick(Date.now());
         },
         enableObserver: () => Date.now() - timeOfLastClick > 1000,
       }}
