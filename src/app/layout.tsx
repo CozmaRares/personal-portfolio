@@ -6,6 +6,7 @@ import MotionConfigWrapper from "@/components/MotionConfigWrapper";
 import ActiveSectionContextProvider from "@/context/active-section";
 import { defaultFont } from "@/lib/fonts";
 import { Toaster } from "@/components/shadcn/ui/toaster";
+import Footer from "@/components/Footer";
 
 const author = "Rares Cozma";
 const name = "Personal Portfolio";
@@ -75,6 +76,7 @@ const RootLayout = ({ children }: Props) => (
           <Header />
           {children}
         </ActiveSectionContextProvider>
+        <Footer />
         <ThemeSwitch />
         <Toaster className="!top-0" />
       </MotionConfigWrapper>

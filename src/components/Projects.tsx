@@ -29,7 +29,7 @@ const computeDelay = (order: number, extraDelay?: number) => {
 
 const Projects = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { ref } = useSectionInView("projects", 0.2);
+  const { ref } = useSectionInView("projects", 0.1);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const wasOpened = useRef(false);
 
