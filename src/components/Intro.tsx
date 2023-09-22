@@ -12,7 +12,7 @@ import { ArrowRight, Download } from "lucide-react";
 import GithubAlt from "./GithubAlt";
 
 const Intro = () => {
-  const { ref, inView } = useSectionInView("home", 0.7);
+  const { ref, inView } = useSectionInView("home", 0.8);
   const { setActiveSection } = useActiveSectionContext();
 
   return (
@@ -43,7 +43,7 @@ const Intro = () => {
         <Line className="flex-grow-[2] bg-gradient-to-t" />
       </motion.div>
       <motion.div
-        className="space-bottom pt-12 sm:pt-40"
+        className="pb-32 pt-12 sm:pb-52 sm:pt-40"
         initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{
@@ -119,7 +119,7 @@ const Intro = () => {
             onClick={() => setActiveSection("contact")}
           >
             Contact me{" "}
-            <span className="opacity-70 delay-150 group-hover:translate-x-[2px] motion-safe:transition-transform sm:hidden md:inline">
+            <span className="opacity-70 delay-150 group-hover:translate-x-1 motion-safe:transition-transform sm:hidden md:inline">
               <ArrowRight />
             </span>
           </Link>
@@ -134,7 +134,7 @@ const Intro = () => {
             sm:w-fit"
           >
             Download CV{" "}
-            <span className="opacity-70 delay-150 group-hover:translate-y-[2px] motion-safe:transition-transform sm:hidden md:inline">
+            <span className="opacity-70 delay-150 group-hover:translate-y-1 motion-safe:transition-transform sm:hidden md:inline">
               <Download />
             </span>
           </a>

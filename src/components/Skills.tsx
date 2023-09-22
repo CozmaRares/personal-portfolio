@@ -6,17 +6,23 @@ import { headingFont } from "@/lib/fonts";
 import { motion } from "framer-motion";
 
 const Skills = () => {
-  const { ref } = useSectionInView("skills");
+  const { ref } = useSectionInView("skills", 0.75);
 
   return (
     <section ref={ref}>
       <Divider />
-      <h2
+      <motion.h2
         id="skills"
         className={`${headingFont.className} text-heading scroll-mt-32 pb-8 text-center`}
+        initial={{ y: 100, opacity: 0 }}
+        whileInView={{
+          y: 0,
+          opacity: 1,
+        }}
+        viewport={{ once: true }}
       >
         My Skills
-      </h2>
+      </motion.h2>
       <ul className="mx-auto flex flex-row flex-wrap justify-center gap-4 sm:w-5/6">
         {skills.map((skill, idx) => (
           <motion.li
@@ -26,7 +32,7 @@ const Skills = () => {
             whileInView={{
               y: 0,
               opacity: 1,
-              transition: { delay: idx * 0.05 },
+              transition: { delay: (idx + 1) * 0.05 },
             }}
             viewport={{ once: true }}
           >

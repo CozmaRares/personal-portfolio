@@ -7,7 +7,7 @@ import useSectionInView from "@/hooks/useSectionInView";
 import { HelpCircle } from "lucide-react";
 
 const About = () => {
-  const { ref } = useSectionInView("about");
+  const { ref } = useSectionInView("about", 0.9);
 
   return (
     <MotionConfig

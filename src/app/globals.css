@@ -32,10 +32,6 @@
     @apply text-xl font-semibold capitalize sm:text-2xl;
   }
 
-  .space-bottom {
-    @apply pb-32 sm:pb-40;
-  }
-
   .grid-like-flex {
     display: flex;
     flex-direction: row;

@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 export default function useSectionInView(
   sectionName: SectionName,
-  threshold = 0.75,
+  threshold: number,
 ) {
   const { ref, inView } = useInView({ threshold });
   const { setActiveSection, enableObserver } = useActiveSectionContext();
