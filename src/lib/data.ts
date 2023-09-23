@@ -80,15 +80,23 @@ export const projectData = Object.freeze({
   ],
   other: [
     {
-      title: "Tic Tac Toe game",
+      title: "Pseudocode Interpreter",
       description:
-        "Tic Tac Toe game, a project within 'The Odin Project' curriculum, featuring an AI game mode with adjustable difficulty levels.",
+        "An interpreter for a dynamic programming language based on pseudocode, featuring customizable error messages, function names, variables, keywords, and primitive types.",
+      tags: ["C++"],
+      githubLink: "https://github.com/CozmaRares/psc-interpreter",
+      icon: Server,
+    },
+    {
+      title: "Sorting Algorithms Visualizer",
+      description:
+        "A sorting algorithms visualizer using p5.js for drawing, showcasing a range of algorithms from bubble sort to intro sort, bundled with Webpack.",
       tags: [
         "JavaScript",
-        "CSS",
-        { text: "TOP", link: "https://www.theodinproject.com/" },
+        "Webpack",
+        { text: "p5.js", link: "https://p5js.org/" },
       ],
-      githubLink: "https://github.com/CozmaRares/odin-project-tic-tac-toe",
+      githubLink: "https://github.com/CozmaRares/sorting-algs-visualizer",
       icon: Layout,
     },
     {
@@ -119,43 +127,11 @@ export const projectData = Object.freeze({
       githubLink: "https://github.com/CozmaRares",
       icon: Server,
     },
-    {
-      title: "File System Traversal",
-      description:
-        "A simple CLI program, developed for a college assignment, that employs Linux system calls to parse a custom binary file format and filter directory contents.",
-      tags: ["C", "Linux", "Makefile"],
-      githubLink: "https://github.com/CozmaRares",
-      icon: Server,
-    },
-    {
-      title: "Process & Thread Management",
-      description:
-        "A college homework project focusing on process and thread management, replicating a specified process hierarchy, and implementing thread synchronization.",
-      tags: ["C", "Linux", "Makefile"],
-      githubLink: "https://github.com/CozmaRares",
-      icon: Server,
-    },
-    {
-      title: "Inter-process Communication",
-      description:
-        "A college homework project involving inter-process communication, where the program receives instructions from a tester script, executes them, and exchanges data via pipes.",
-      tags: ["C", "Linux", "Makefile"],
-      githubLink: "https://github.com/CozmaRares",
-      icon: Server,
-    },
-    {
-      title: "Pseudocode Interpreter",
-      description:
-        "An interpreter for a dynamic programming language based on pseudocode, featuring customizable error messages, function names, variables, keywords, and primitive types.",
-      tags: ["C++", "Makefile"],
-      githubLink: "https://github.com/CozmaRares/psc-interpreter",
-      icon: Server,
-    },
   ],
-} satisfies Readonly<{
+} satisfies {
   featured: FeaturedProjectType[];
   other: ProjectType[];
-}>);
+});
 
 export const skills = Object.freeze([
   "HTML",
@@ -172,6 +148,7 @@ export const skills = Object.freeze([
   "Socket.IO",
   "TailwindCSS",
   "Git",
+  "Markdown",
   "C/C++",
   "Makefile",
   "Java",
