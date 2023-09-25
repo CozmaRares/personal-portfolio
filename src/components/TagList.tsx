@@ -13,7 +13,7 @@ const TagList = ({ keyPrefix, tags, className }: Props) => (
   <ul
     className={cn(
       detailFont.className,
-      "flex flex-row flex-wrap gap-2 text-sm capitalize md:gap-4",
+      "flex flex-row flex-wrap items-center gap-2 text-sm capitalize md:gap-4",
       className,
     )}
   >
@@ -25,10 +25,10 @@ const TagList = ({ keyPrefix, tags, className }: Props) => (
           <a
             href={tag.link}
             target="_blank"
-            className="flex flex-row items-center gap-1 hover:underline"
+            className="flex flex-row items-center hover:underline"
           >
             {tag.text}
-            <ExternalLink />
+            <ExternalLink className="scale-75" />
           </a>
         )}
       </li>

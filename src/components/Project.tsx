@@ -27,7 +27,6 @@ const Project = ({
       <TagList
         keyPrefix={`project-other-${title}`}
         tags={tags}
-        className="justify-between"
       />
     </div>
   </article>
