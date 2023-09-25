@@ -82,7 +82,7 @@ export const projectData = Object.freeze({
     {
       title: "Pseudocode Interpreter",
       description:
-        "An interpreter for a dynamic programming language based on pseudocode, featuring customizable error messages, function names, variables, keywords, and primitive types.",
+        "An interpreter for a dynamic programming language based on pseudocode, featuring customizable error messages, function names, keywords, and primitive types.",
       tags: ["C++"],
       githubLink: "https://github.com/CozmaRares/psc-interpreter",
       icon: Server,
@@ -104,7 +104,7 @@ export const projectData = Object.freeze({
       description:
         "Polynomial calculator with a dedicated graphical interface through which the user can insert polynomials, select the mathematical operation to be performed and view the result.",
       tags: ["Java", "JUnit", "Maven"],
-      githubLink: "https://github.com/CozmaRares",
+      githubLink: "https://github.com/CozmaRares/polynomial-calculator",
       icon: Server,
     },
     {
@@ -112,7 +112,7 @@ export const projectData = Object.freeze({
       description:
         "An application that simulates queuing-based systems. It involves clients arriving, joining queues, waiting, getting served, and leaving. The application calculates key metrics such as average waiting time, average service time, and peak hour.",
       tags: ["Java", "Maven"],
-      githubLink: "https://github.com/CozmaRares",
+      githubLink: "https://github.com/CozmaRares/queue-management",
       icon: Server,
     },
     {
@@ -124,7 +124,7 @@ export const projectData = Object.freeze({
         "Maven",
         { text: "SurrealDB", link: "https://surrealdb.com/" },
       ],
-      githubLink: "https://github.com/CozmaRares",
+      githubLink: "https://github.com/CozmaRares/orders-management",
       icon: Server,
     },
   ],
