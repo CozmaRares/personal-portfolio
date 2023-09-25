@@ -61,7 +61,9 @@ const FeaturedProject = ({
           {img}
         </a>
       ) : (
-        img
+        <div className="border-card group overflow-hidden rounded-lg lg:w-1/2">
+          {img}
+        </div>
       )}
       <div className="flex w-full flex-grow flex-col justify-between gap-6 lg:w-1/2 lg:items-end lg:group-even:items-start">
         <h3 className={`${headingFont.className} text-heading font-medium`}>
