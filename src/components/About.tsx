@@ -7,7 +7,7 @@ import useSectionInView from "@/hooks/useSectionInView";
 import { HelpCircle } from "lucide-react";
 
 const About = () => {
-  const { ref } = useSectionInView("about", 0.9);
+  const { ref } = useSectionInView("about", 0.8);
 
   return (
     <MotionConfig
@@ -51,11 +51,11 @@ const About = () => {
           <Line className="mx-auto h-full" />
         </motion.div>
         <motion.div
-          className="space-y-4 pb-40 pt-4 text-base !leading-[1.5] sm:pb-56 sm:text-lg"
+          className="space-y-4 pb-40 pt-4 text-base !leading-[1.5] sm:pb-72 sm:text-lg"
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
         >
-          <p>
+          <p className="sm:mt-12">
             My journey began back in high school, where I developed a
             fascination for C++ and improved my skills by creating small CLI
             programs and games.

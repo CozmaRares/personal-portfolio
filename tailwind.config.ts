@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 import { CSSRuleObject } from "tailwindcss/types/config";
 
-const config: Config = {
+const config = {
   darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -61,5 +61,5 @@ const config: Config = {
       addUtilities(neon);
     }),
   ],
-};
+} satisfies Config;
 export default config;

@@ -23,7 +23,7 @@ const Skills = () => {
       >
         My Skills
       </motion.h2>
-      <ul className="mx-auto flex flex-row flex-wrap justify-center gap-4 sm:w-5/6">
+      <ul className="mx-auto flex flex-row flex-wrap justify-center gap-2 md:w-5/6">
         {skills.map((skill, idx) => (
           <motion.li
             key={skill}

@@ -3,13 +3,6 @@
 import type { FeaturedProjectType } from "@/lib/data";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import {
-  motion,
-  useMotionTemplate,
-  useScroll,
-  useTransform,
-} from "framer-motion";
-import { useRef } from "react";
 import { headingFont } from "@/lib/fonts";
 import TagList from "./TagList";
 import { ExternalLink, Github } from "lucide-react";
@@ -22,14 +15,6 @@ const FeaturedProject = ({
   demoLink,
   image,
 }: FeaturedProjectType) => {
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["0 1", "0.7 1"],
-  });
-  const transform = useMotionTemplate`translateX(calc(var(--direction, 1) * 500px * (1 - ${scrollYProgress})))`;
-  const opacity = useTransform(() => 0.5 + scrollYProgress.get() ** 4 / 2);
-
   const img = (
     <Image
       src={image}
@@ -42,9 +27,7 @@ const FeaturedProject = ({
   );
 
   return (
-    <motion.article
-      ref={ref}
-      style={{ transform, opacity }}
+    <article
       className="card mx-auto flex h-full max-w-[650px] flex-col items-center gap-6 p-8
       group-even:[--direction:-1]
       md:max-w-[initial] md:group-odd:[--direction:-1]
@@ -103,7 +86,7 @@ const FeaturedProject = ({
           )}
         </div>
       </div>
-    </motion.article>
+    </article>
   );
 };
 

@@ -94,7 +94,7 @@ const Contact = () => {
           dark:bg-slate-300 dark:text-black dark:neon-green sm:w-fit"
         >
           Submit
-          <span className="opacity-70 delay-150 group-hover:-translate-y-1 group-hover:translate-x-1 motion-safe:transition-transform">
+          <span className="opacity-70 group-hover:-translate-y-2 group-hover:translate-x-2 group-hover:scale-[0.70] motion-safe:transition-transform">
             <Send />
           </span>
         </button>
