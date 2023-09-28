@@ -119,9 +119,7 @@ const Intro = () => {
             onClick={() => setActiveSection("contact")}
           >
             Contact me{" "}
-            <span className="opacity-70 delay-150 group-hover:translate-x-1 motion-safe:transition-transform sm:hidden md:inline">
-              <ArrowRight />
-            </span>
+            <ArrowRight className="opacity-70 delay-150 group-hover:translate-x-1 motion-safe:transition-transform sm:hidden md:inline" />
           </Link>
           <a
             href="/CV.pdf"
@@ -134,9 +132,7 @@ const Intro = () => {
             sm:w-fit"
           >
             Download CV{" "}
-            <span className="opacity-70 delay-150 group-hover:translate-y-1 motion-safe:transition-transform sm:hidden md:inline">
-              <Download />
-            </span>
+            <Download className="opacity-70 delay-150 group-hover:translate-y-1 motion-safe:transition-transform sm:hidden md:inline" />
           </a>
           <a
             href="https://github.com/CozmaRares/"
@@ -149,9 +145,7 @@ const Intro = () => {
             dark:bg-gray-900/50 sm:w-fit"
           >
             <span className="sm:hidden">My Github</span>
-            <span className="opacity-70 sm:opacity-100">
-              <GithubAlt />
-            </span>
+              <GithubAlt className="opacity-70 sm:opacity-100" />
           </a>
         </div>
       </motion.div>

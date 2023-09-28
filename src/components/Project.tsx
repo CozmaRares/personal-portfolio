@@ -19,7 +19,7 @@ const Project = ({
       aria-label="link to code"
       className="flex flex-row items-center gap-1 transition-colors hover:text-indigo-600 dark:hover:text-green-500"
     >
-      Code <Github />
+      Code <Github className="scale-75" />
     </a>
     <div className="col-span-full flex flex-col justify-between gap-4">
       <h3 className={`${headingFont.className} text-heading`}>{title}</h3>

@@ -73,14 +73,14 @@ const FeaturedProject = ({
           keyPrefix={`project-showcase-${title}`}
           tags={tags}
         />
-        <div className="flex flex-row gap-4 text-lg">
+        <div className="flex flex-row gap-4 ">
           <a
             href={githubLink}
             target="_blank"
             aria-label="link to code"
             className="flex flex-row items-center gap-1 transition-colors hover:text-indigo-600 dark:hover:text-green-500"
           >
-            Code <Github />
+            Code <Github className="scale-75" />
           </a>
           {demoLink && (
             <a
@@ -89,7 +89,7 @@ const FeaturedProject = ({
               aria-label="link to demo"
               className="flex flex-row items-center gap-1 transition-colors hover:text-indigo-600 dark:hover:text-green-500"
             >
-              Demo <ExternalLink />
+              Demo <ExternalLink className="scale-75" />
             </a>
           )}
         </div>

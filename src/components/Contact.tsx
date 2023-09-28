@@ -94,9 +94,10 @@ const Contact = () => {
           dark:bg-slate-300 dark:text-black dark:neon-green sm:w-fit"
         >
           Submit
-          <span className="opacity-70 group-hover:-translate-y-2 group-hover:translate-x-2 group-hover:scale-[0.70] motion-safe:transition-transform">
-            <Send />
-          </span>
+          <Send
+            className="opacity-70 group-hover:-translate-y-2 group-hover:translate-x-2 group-hover:scale-[0.70]
+            motion-safe:transition-transform"
+          />
         </button>
       </form>
     </motion.section>
