@@ -13,7 +13,7 @@ const TagList = ({ keyPrefix, tags, className }: Props) => (
   <ul
     className={cn(
       detailFont.className,
-      "flex flex-row flex-wrap items-center gap-2 text-sm capitalize md:gap-4",
+      "flex flex-row flex-wrap items-center gap-2 text-sm md:gap-4",
       className,
     )}
   >

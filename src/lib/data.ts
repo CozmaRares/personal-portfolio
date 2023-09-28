@@ -90,10 +90,10 @@ export const projectData = Object.freeze({
     {
       title: "Sorting Algorithms Visualizer",
       description:
-        "A sorting algorithms visualizer using p5.js for drawing, showcasing a range of algorithms from bubble sort to intro sort, bundled with Webpack.",
+        "A sorting algorithms visualizer using p5.js for drawing, showcasing a range of algorithms from bubble sort to intro sort, bundled with Vite.",
       tags: [
         "JavaScript",
-        "Webpack",
+        "Vite",
         { text: "p5.js", link: "https://p5js.org/" },
       ],
       githubLink: "https://github.com/CozmaRares/sorting-algs-visualizer",
@@ -103,7 +103,7 @@ export const projectData = Object.freeze({
       title: "Polynomial Calculator",
       description:
         "Polynomial calculator with a dedicated graphical interface through which the user can insert polynomials, select the mathematical operation to be performed and view the result.",
-      tags: ["Java", "JUnit", "Maven"],
+      tags: ["Java", "JUnit", "Java Swing"],
       githubLink: "https://github.com/CozmaRares/polynomial-calculator",
       icon: Server,
     },
@@ -111,7 +111,7 @@ export const projectData = Object.freeze({
       title: "Queue Management",
       description:
         "An application that simulates queuing-based systems. It involves clients arriving, joining queues, waiting, getting served, and leaving. The application calculates key metrics such as average waiting time, average service time, and peak hour.",
-      tags: ["Java", "Maven"],
+      tags: ["Java", "Maven", "Threads"],
       githubLink: "https://github.com/CozmaRares/queue-management",
       icon: Server,
     },
@@ -121,7 +121,7 @@ export const projectData = Object.freeze({
         "An application for client order management in a warehouse, utilizing SurrealDB as the database, offering basic CRUD functionality.",
       tags: [
         "Java",
-        "Maven",
+        "Reflection API",
         { text: "SurrealDB", link: "https://surrealdb.com/" },
       ],
       githubLink: "https://github.com/CozmaRares/orders-management",
