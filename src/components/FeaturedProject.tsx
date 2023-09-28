@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { headingFont } from "@/lib/fonts";
 import TagList from "./TagList";
 import { ExternalLink, Github } from "lucide-react";
+import { useInView } from "react-intersection-observer";
 
 const FeaturedProject = ({
   title,
@@ -15,6 +16,8 @@ const FeaturedProject = ({
   demoLink,
   image,
 }: FeaturedProjectType) => {
+  const { ref, inView } = useInView({ triggerOnce: true });
+
   const img = (
     <Image
       src={image}
@@ -28,12 +31,16 @@ const FeaturedProject = ({
 
   return (
     <article
-      className="card mx-auto flex h-full max-w-[650px] flex-col items-center gap-6 p-8
-      group-even:[--direction:-1]
-      md:max-w-[initial] md:group-odd:[--direction:-1]
-      md:group-even:[--direction:1] lg:flex-row
-      lg:group-odd:text-right lg:group-odd:[--direction:1]
-      lg:group-even:flex-row-reverse lg:group-even:[--direction:-1]"
+      className={cn(
+        `card mx-auto flex h-full max-w-[650px] translate-x-[calc(var(--direction,1)*200px)] flex-col items-center gap-6 p-8
+        opacity-0 duration-500
+        group-even:[--direction:-1] motion-safe:transition-transform
+        md:max-w-[initial] md:group-odd:[--direction:-1]
+        md:group-even:[--direction:1] lg:flex-row
+        lg:group-odd:text-right lg:group-odd:[--direction:1]
+        lg:group-even:flex-row-reverse lg:group-even:[--direction:-1]`,
+        { "translate-x-0 opacity-100": inView },
+      )}
     >
       {demoLink ? (
         <a
@@ -53,6 +60,7 @@ const FeaturedProject = ({
           {title}
         </h3>
         <p
+          ref={ref}
           className="z-10 rounded-lg bg-gray-50 from-gray-50 p-4 text-sm 
           dark:bg-gray-800 dark:from-gray-800
           sm:text-base md:p-6 lg:!bg-transparent

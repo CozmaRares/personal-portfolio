@@ -4,7 +4,6 @@ import { projectData } from "@/lib/data";
 import FeaturedProject from "./FeaturedProject";
 import { headingFont } from "@/lib/fonts";
 import useSectionInView from "@/hooks/useSectionInView";
-import { motion } from "framer-motion";
 
 const FeaturedProjects = () => {
   const { ref } = useSectionInView("projects", 0.2);
@@ -21,17 +20,13 @@ const FeaturedProjects = () => {
         Projects
       </h2>
       <ul className="grid gap-8 px-[2px] pb-2 md:grid-cols-2 md:gap-4 lg:grid-cols-1 lg:gap-14">
-        {projectData.featured.map((data, idx) => (
-          <motion.li
+        {projectData.featured.map(data => (
+          <li
             key={`project-showcase-${data.title}`}
             className="group"
-            initial={{ x: idx % 2 == 0 ? 200 : -200, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            viewport={{ once: true }}
           >
             <FeaturedProject {...data} />
-          </motion.li>
+          </li>
         ))}
       </ul>
     </section>
