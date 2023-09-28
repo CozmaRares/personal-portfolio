@@ -51,25 +51,25 @@ const About = () => {
           <Line className="mx-auto h-full" />
         </motion.div>
         <motion.div
-          className="space-y-4 pb-40 pt-4 text-base !leading-[1.5] sm:pb-72 sm:text-lg"
+          className="space-y-4 pb-40 pt-4 text-base sm:pb-72 sm:text-lg"
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
         >
           <p className="sm:mt-12">
-            My journey began back in high school, where I developed a
-            fascination for C++ and improved my skills by creating small CLI
+            I got started on this path back in high school when I got into C++.
+            I leveled up my skills by messing around with little command-line
             programs and games.
           </p>
           <p>
-            As I transitioned to college, I discovered HTML and CSS, briefly
-            experimented with p5.js, and, ultimately, settled on React. I&apos;m
-            always eager to learn and expand my horizons, with a keen interest
-            in exploring additional web frameworks.
+            Before I starting college, I stumbled upon HTML and CSS, dabbled a
+            bit in p5.js, and eventually found my love for React. I&apos;m
+            always up for learning and broadening my skill set, especially when
+            it comes to checking out other web frameworks.
           </p>
           <p>
-            In addition to my proficiency in C/C++ and my introduction to Java
-            in my second year of college, I&apos;m open to mastering other
-            backend languages.
+            Apart from being pretty solid with C/C++ and getting my feet wet
+            with Java during my second year in college, I&apos;m totally up for
+            getting the hang of other backend languages.
           </p>
         </motion.div>
       </section>
