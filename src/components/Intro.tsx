@@ -122,7 +122,7 @@ const Intro = () => {
             <ArrowRight className="opacity-70 delay-150 group-hover:translate-x-1 motion-safe:transition-transform sm:hidden md:inline" />
           </Link>
           <a
-            href="/CV.pdf"
+            href="/Rares-Cozma-CV.pdf"
             download
             className="border-card group flex w-full flex-row items-center justify-center gap-2 whitespace-nowrap rounded-full
             bg-white/40 px-7 py-3 outline-none
