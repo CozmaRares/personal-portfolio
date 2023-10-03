@@ -145,7 +145,7 @@ const Intro = () => {
             dark:bg-gray-900/50 sm:w-fit"
           >
             <span className="sm:hidden">My Github</span>
-              <GithubAlt className="opacity-70 sm:opacity-100" />
+            <GithubAlt className="opacity-70 sm:opacity-100" />
           </a>
         </div>
       </motion.div>
