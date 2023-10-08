@@ -23,7 +23,7 @@ const Project = ({
     </a>
     <div className="col-span-full flex flex-col justify-between gap-4">
       <h3 className={`${headingFont.className} text-heading`}>{title}</h3>
-      <p className="">{description}</p>
+      <p>{description}</p>
       <TagList
         keyPrefix={`project-other-${title}`}
         tags={tags}
