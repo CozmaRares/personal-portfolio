@@ -21,7 +21,7 @@ export default class TypeWriter {
 
   private text = "";
   private delay: number = 0;
-  private stopped = false;
+  private stopped = true;
   private lastFrameTime: ReturnType<typeof Date.now> | null = null;
   private animationFrame: ReturnType<typeof requestAnimationFrame> | null =
     null;
@@ -68,8 +68,8 @@ export default class TypeWriter {
     }
   }
 
-  isRunning() {
-    return !this.stopped;
+  isStopped() {
+    return this.stopped;
   }
 
   private runEventLoop() {
