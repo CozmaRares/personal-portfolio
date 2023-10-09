@@ -32,7 +32,7 @@ const Intro = () => {
       >
         <Line className="flex-grow" />
         <Image
-          src="https://placehold.co/96"
+          src="/portrait.jpeg"
           alt="Rares' portrait"
           width={96}
           height={96}
