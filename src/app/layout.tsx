@@ -14,8 +14,7 @@ export const metadata = createMetadata({
     "Discover the skills of Rares Cozma in this personal portfolio. With proficiency in JavaScript, React, and also back-end languages such as C/C++, and Java, along with a solid grasp of Git for version control.",
   url: new URL("https://raru.dev"),
   author: "Rares Cozma",
-  // TODO: add image
-  image: "",
+  image: "https://raru.dev/image.png",
   themes: [
     { theme: "light", color: "#f3f4f6" },
     { theme: "dark", color: "#111827" },
