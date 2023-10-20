@@ -61,10 +61,10 @@ const About = () => {
             programs and games.
           </p>
           <p>
-            Before I starting college, I stumbled upon HTML and CSS, dabbled a
-            bit in p5.js, and eventually found my love for React. I&apos;m
-            always up for learning and broadening my skill set, especially when
-            it comes to checking out other web frameworks.
+            Before starting college, I stumbled upon HTML and CSS, dabbled a bit
+            in p5.js, and eventually found my love for React. I&apos;m always up
+            for learning and broadening my skill set, especially when it comes
+            to checking out other web frameworks.
           </p>
           <p>
             Apart from being pretty solid with C/C++ and getting my feet wet
