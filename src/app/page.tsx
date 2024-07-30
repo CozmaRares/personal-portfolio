@@ -4,6 +4,7 @@ import FeaturedProjects from "@/components/FeaturedProjects";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
+import Experience from "@/components/Experience";
 
 const Home = () => (
   <>
@@ -24,6 +25,7 @@ const Home = () => (
     <main className="mb-20 overflow-x-hidden px-4 pt-24 sm:pt-0">
       <Intro />
       <About />
+      <Experience />
       <FeaturedProjects />
       <Projects />
       <Skills />

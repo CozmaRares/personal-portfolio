@@ -7,6 +7,7 @@ import { defaultFont } from "@/lib/fonts";
 import { Toaster } from "@/components/shadcn/ui/toaster";
 import Footer from "@/components/Footer";
 import { createMetadata } from "@/lib/utils";
+import ThemeContextProvider from "@/context/theme";
 
 export const metadata = createMetadata({
   title: "Rares Cozma | Personal Portfolio",
@@ -41,13 +42,15 @@ const RootLayout = ({ children }: Props) => (
       className={`${defaultFont.className} bg-gray-100 text-gray-950 dark:bg-gray-900 dark:text-gray-50`}
     >
       <MotionConfigWrapper reducedMotion="user">
-        <ActiveSectionContextProvider>
-          <Header />
-          {children}
-        </ActiveSectionContextProvider>
-        <Footer />
-        <ThemeSwitch />
-        <Toaster className="!top-0" />
+        <ThemeContextProvider>
+          <ActiveSectionContextProvider>
+            <Header />
+            {children}
+          </ActiveSectionContextProvider>
+          <Footer />
+          <ThemeSwitch />
+          <Toaster className="!top-0" />
+        </ThemeContextProvider>
       </MotionConfigWrapper>
     </body>
   </html>

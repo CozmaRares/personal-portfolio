@@ -4,7 +4,6 @@ import useSectionInView from "@/hooks/useSectionInView";
 import { headingFont } from "@/lib/fonts";
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
-import { Facebook, GithubAlt, LinkedIn } from "./FAIcons";
 import { socials } from "@/lib/data";
 
 const Contact = () => {

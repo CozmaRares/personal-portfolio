@@ -4,12 +4,19 @@ import chessImg from "@/../public/projects/chess.png";
 import serverImg from "@/../public/projects/c-server.png";
 import type { StaticImageData } from "next/image";
 import type { Prettify } from "./types";
-import { Layout, LucideIcon, Server } from "lucide-react";
+import {
+  GraduationCap,
+  Briefcase,
+  Layout,
+  LucideIcon,
+  Server,
+} from "lucide-react";
 import { Facebook, GithubAlt, LinkedIn } from "@/components/FAIcons";
 
 export const sections = Object.freeze([
   "home",
   "about",
+  "experience",
   "projects",
   "skills",
   "contact",
@@ -153,13 +160,32 @@ export const skills = Object.freeze([
   "C/C++",
   "Makefile",
   "Java",
-  "JUnit",
-  "SurrealDB",
-  "Basic AWS",
+  "Docker",
+  "PHP",
 ] as const);
 
 export const socials = Object.freeze([
   { link: "https://www.linkedin.com/in/cozmarares/", icon: LinkedIn },
   { link: "https://github.com/CozmaRares/", icon: GithubAlt },
   { link: "https://www.facebook.com/raresoi.cozma/", icon: Facebook },
+]);
+
+export const experience = Object.freeze([
+  {
+    title: "Full-Stack Intern ",
+    company: "CristalSoft",
+    location: "Alba Iulia, Romania",
+    description:
+      "Developed an internal application focusing on customer relationship management (CRM) functionalities. I used React for the front end, PHP for the REST API powering the application, Docker for containerization and ease of deployment, and Apache for the web server configuration.",
+    icon: Briefcase,
+    date: "Jul. 2024 – Sep. 2024",
+  },
+  {
+    title: "University",
+    location: "Cluj-Napoca, Romania",
+    description:
+      "Studied C and Java, with a focus on OOP principles. Designed and implemented a MIPS CPU on an FPGA board. And also did various projects involving databases, computer graphics, and lexer/parser design for the classes I took.",
+    icon: GraduationCap,
+    date: "2021-present",
+  },
 ]);

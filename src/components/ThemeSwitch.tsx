@@ -1,13 +1,11 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
-
-type Theme = "light" | "dark";
+import { useTheme } from "@/context/theme";
 
 const ThemeSwitch = () => {
-  const [theme, setTheme] = useState<Theme>("light");
+  const { theme, setTheme } = useTheme();
 
   const toggleTheme = () => {
     if (theme === "light") {
@@ -20,18 +18,6 @@ const ThemeSwitch = () => {
       document.documentElement.classList.remove("dark");
     }
   };
-
-  useEffect(() => {
-    const localTheme = window.localStorage.getItem("theme") as Theme | null;
-
-    if (localTheme) {
-      setTheme(localTheme);
-      if (localTheme === "dark") document.documentElement.classList.add("dark");
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
 
   return (
     <AnimatePresence>

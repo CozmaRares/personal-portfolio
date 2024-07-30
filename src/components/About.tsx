@@ -48,14 +48,14 @@ const About = () => {
             delay: 0.6,
           }}
         >
-          <Line className="mx-auto h-full" />
+          <Line className="mx-auto h-full to-indigo-400 dark:to-green-500" />
         </motion.div>
         <motion.div
-          className="space-y-4 pb-40 pt-4 text-base sm:pb-72 sm:text-lg"
+          className="my-4 space-y-4 text-base sm:my-16 sm:text-lg"
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
         >
-          <p className="sm:mt-12">
+          <p>
             I got started on this path back in high school when I got into C++.
             I leveled up my skills by messing around with little command-line
             programs and games.
@@ -72,6 +72,10 @@ const About = () => {
             getting the hang of other backend languages.
           </p>
         </motion.div>
+        <div className="col-span-full flex flex-row items-end pb-20 pl-[calc((var(--col-1)-3px)/2)]">
+          <div className="aspect-square w-6 rounded-bl-3xl border-b-[3px] border-l-[3px] border-b-indigo-400 border-l-indigo-400 dark:border-b-green-500 dark:border-l-green-500" />
+          <Line className="h-[3px] w-2/5 bg-gradient-to-r" />
+        </div>
       </section>
     </MotionConfig>
   );
