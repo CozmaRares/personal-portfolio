@@ -74,7 +74,6 @@ export const projectData = Object.freeze({
         "AWS",
       ],
       githubLink: "https://github.com/CozmaRares/chess",
-      demoLink: "https://chess.raru.dev/",
       image: chessImg,
     },
     {
