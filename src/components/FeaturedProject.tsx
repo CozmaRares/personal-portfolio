@@ -23,7 +23,7 @@ const FeaturedProject = ({
       src={image}
       alt={`${title} preview`}
       className={cn("pointer-events-none aspect-video object-cover", {
-        "duration-500 group-hover:scale-110 group-focus:scale-110 motion-safe:transition-transform":
+        "duration-500 group-hover/img:scale-110 group-focus/img:scale-110 motion-safe:transition-transform":
           !!demoLink,
       })}
     />
@@ -46,12 +46,12 @@ const FeaturedProject = ({
         <a
           href={demoLink}
           target="_blank"
-          className="border-card group overflow-hidden rounded-lg lg:w-1/2"
+          className="border-card group/img overflow-hidden rounded-lg lg:w-1/2"
         >
           {img}
         </a>
       ) : (
-        <div className="border-card group overflow-hidden rounded-lg lg:w-1/2">
+        <div className="border-card overflow-hidden rounded-lg lg:w-1/2">
           {img}
         </div>
       )}
