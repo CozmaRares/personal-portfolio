@@ -9,7 +9,7 @@ import { headingFont } from "@/lib/fonts";
 import useSectionInView from "@/hooks/useSectionInView";
 import { useActiveSectionContext } from "@/context/active-section";
 import { ArrowRight, Download } from "lucide-react";
-import GithubAlt from "./GithubAlt";
+import { GithubAlt } from "./FAIcons";
 
 const Intro = () => {
   const { ref, inView } = useSectionInView("home", 0.8);
