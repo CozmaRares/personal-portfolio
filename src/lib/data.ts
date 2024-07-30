@@ -5,6 +5,7 @@ import serverImg from "@/../public/projects/c-server.png";
 import type { StaticImageData } from "next/image";
 import type { Prettify } from "./types";
 import { Layout, LucideIcon, Server } from "lucide-react";
+import { Facebook, GithubAlt, LinkedIn } from "@/components/FAIcons";
 
 export const sections = Object.freeze([
   "home",
@@ -156,3 +157,9 @@ export const skills = Object.freeze([
   "SurrealDB",
   "Basic AWS",
 ] as const);
+
+export const socials = Object.freeze([
+  { link: "https://www.linkedin.com/in/cozmarares/", icon: LinkedIn },
+  { link: "https://github.com/CozmaRares/", icon: GithubAlt },
+  { link: "https://www.facebook.com/raresoi.cozma/", icon: Facebook },
+]);

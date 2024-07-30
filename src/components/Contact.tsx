@@ -5,6 +5,7 @@ import { headingFont } from "@/lib/fonts";
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 import { Facebook, GithubAlt, LinkedIn } from "./FAIcons";
+import { socials } from "@/lib/data";
 
 const Contact = () => {
   const { ref } = useSectionInView("contact", 0.6);
@@ -31,22 +32,14 @@ const Contact = () => {
         </a>
       </p>
       <p>or through one of my socials</p>
-      <ul className="flex flex-row items-center justify-center gap-3 [&>li:hover]:text-indigo-700 dark:[&>li:hover]:text-green-500 text-xl sm:text-2xl">
-        <li>
-          <a href="https://www.linkedin.com/in/cozmarares/">
-            <LinkedIn />
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/CozmaRares/">
-            <GithubAlt />
-          </a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/raresoi.cozma/">
-            <Facebook />
-          </a>
-        </li>
+      <ul className="flex flex-row items-center justify-center gap-3 text-xl sm:text-2xl [&>li:hover]:text-indigo-700 dark:[&>li:hover]:text-green-500">
+        {socials.map(({ link, icon: Icon }) => (
+          <li key={`socials-link-${link}`}>
+            <a href={link}>
+              <Icon />
+            </a>
+          </li>
+        ))}
       </ul>
     </motion.section>
   );
